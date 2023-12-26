@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Outfit-Regular";
+  src:
+    url("/app/fonts/Outfit-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit-SemiBold";
+  src:
+    url("/app/fonts/Outfit-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit-Medium";
+  src:
+    url("/app/fonts/Outfit-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit-Bold";
+  src:
+    url("/app/fonts/Outfit-Bold.ttf") format("truetype");
+}

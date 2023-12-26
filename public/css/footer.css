@@ -1,0 +1,43 @@
+/* Dashboard */
+.dashboard_footer {
+  padding: 24px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.dashboard_footer>ul li {
+  padding: 0 6px 0 2px;
+  display: inline;
+}
+
+.dashboard_footer>ul li:not(:last-child) {
+  border-right: solid 1px var(--text-main-color);
+}
+
+@media screen and (max-width:500px) {
+  .dashboard_footer>ul li {
+    display: block;
+  }
+
+  .dashboard_footer>ul li:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .dashboard_footer {
+    justify-content: flex-start;
+  }
+
+  .dashboard_footer>ul li:not(:last-child) {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .dashboard_footer {
+    text-align: center;
+    justify-content: center;
+  }
+}

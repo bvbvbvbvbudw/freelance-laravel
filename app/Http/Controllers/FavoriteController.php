@@ -21,7 +21,7 @@ class FavoriteController extends Controller
 
         $user -> Favorites()->save($favorite);
 
-        return redirect('/job/'.$request->input('job_id'))->with('success', 'Favourite Added!');
+        return redirect('/jobs/'.$request->input('job_id'))->with('success', 'Favourite Added!');
     }
     public function getFavouritesWidget()
     {

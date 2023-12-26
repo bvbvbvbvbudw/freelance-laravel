@@ -1,4 +1,5 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
+@extends('dashboard.app')
 @section('content')
 
     <h2>Jobs</h2>

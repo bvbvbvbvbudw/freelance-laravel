@@ -17,7 +17,8 @@ class JobsController extends Controller
 //        $jobs = $user->jobs()->all();
         $jobs = Job::all();
 
-        return view('jobs.index')->with('jobs', $jobs);
+//        return view('jobs.index')->with('jobs', $jobs);
+        return view('dashboard.pages.jobs.jobs')->with('jobs', $jobs);
     }
 
     /**
@@ -87,7 +88,8 @@ class JobsController extends Controller
             'threads' => $threads,
         ];
 
-        return view('jobs.show')->with('data', $data);
+//        return view('jobs.show')->with('data', $data);
+        return view('dashboard.pages.jobs.jobs_details')->with('data', $data);
     }
 
     /**
