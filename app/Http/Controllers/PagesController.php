@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -127,7 +128,8 @@ class PagesController extends Controller
     }
     public function showPostProfilePage($username)
     {
-        $posts = Post::where('name', $username)->get();
+        $userid = User::where('name', $username)->first();
+        $posts = Post::where('user_id', $userid->id)->get();
         return view('dashboard.pages.profile.post')->with('posts', $posts);
     }
     public function showEditProfilePage()

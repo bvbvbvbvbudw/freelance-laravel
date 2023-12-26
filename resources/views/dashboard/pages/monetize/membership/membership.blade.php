@@ -9,7 +9,7 @@
                 <div class="membership_header">
                     <h2 class="h2">Memberhip</h2>
                     <h3 class="h3 mt-24">HIGHLY RECOMMENDED</h3>
-                    <a href="/membership/enable"
+                    <a href="{{ route('viewEnableMembership') }}"
                        class="button button_1 button_large inline-block s-30 mt-24">Enable
                         membership</a>
                 </div>

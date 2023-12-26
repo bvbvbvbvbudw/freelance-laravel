@@ -1,11 +1,8 @@
-
-<?php $theme = 'light' ?>
 @extends('dashboard.app')
 @section("content")
     <main class="dashboard_main">
         @include('dashboard.components.columns.left_column')
         <div class="content">
-
             <div class="dashboard_donations_block border_dashboard dashboard_block bg_secondary">
                 <div class="dashboard_navsearch_block mt-16">
                     <ul class="dashboard_navsearch_block-nav">

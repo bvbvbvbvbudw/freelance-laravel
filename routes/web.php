@@ -78,7 +78,7 @@ Route::middleware(['auth'])->group(function (){
 
 
 
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
     Route::resource('/jobs', JobsController::class)->names('viewJobsPage');
     Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');

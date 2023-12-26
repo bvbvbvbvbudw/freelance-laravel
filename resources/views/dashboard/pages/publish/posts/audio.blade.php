@@ -9,7 +9,7 @@ $theme_reverse = 'dark' ?>
             <div class="dashboard_newpost_block dashboard_audio border_dashboard dashboard_block bg_secondary">
                 <div class="dashboard_audio_header">
 
-                    <a href="../dashboard/post.php" class="h2 align-center"><img
+                    <a href="{{ route('viewPostsPage') }}" class="h2 align-center"><img
                             src="../img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_left_48px.svg"> Write a post</a>
 
                     <div>

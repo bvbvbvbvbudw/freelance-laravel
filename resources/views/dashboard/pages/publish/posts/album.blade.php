@@ -40,7 +40,7 @@ $theme_reverse = 'dark' ?>
                         <div id="file-list" class="file-list"></div>
                     </div>
                     <div class="newpost_actions">
-                        <a href="../dashboard/post.php" class="button button_2">
+                        <a href="{{ route('viewPostsPage') }}" class="button button_2">
                             <img class="_icon" src="../img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_left_48px2.svg">
                             Dashboard
                         </a>

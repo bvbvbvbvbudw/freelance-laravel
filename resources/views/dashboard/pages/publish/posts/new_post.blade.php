@@ -12,7 +12,7 @@
                             <input class="h2 mt-16 input-colormain input-transparent" name="title" type="text" placeholder="Title">
                         </div>
                         <div class="newpost_actions">
-                            <a href="/app/dashboard/post.php" class="button button_2">
+                            <a href="{{ route('viewPostsPage') }}" class="button button_2">
                                 <img class="_icon" src="/app/img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_left_48px2.svg">
                                 Dashboard
                             </a>

@@ -11,11 +11,11 @@
 
                 </div>
                 <div class="dashboard_actions mt-16">
-                    <a href="/post/create" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
+                    <a href="{{route('viewPostsCreatePage')}}" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
                         <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/icon _lock_.svg">
                         Write a post
                     </a>
-                    <a href="/post/album" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
+                    <a href="{{ route('viewPostsAlbumCreatePage') }}" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
                         <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/icon _shopping bag_.svg">
                         Add an album
                     </a>

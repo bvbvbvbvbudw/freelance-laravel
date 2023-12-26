@@ -57,24 +57,24 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
             <div class="dropdown-content sharepage_dropdown ">
                 <ul class="dropdown-list">
                     <li>
-                        <a href="../profile/sign_up.php">Start a page</a>
+                        <a href="{{ route('register') }}">Start a page</a>
                     </li>
                     <li>
-                        <a href="../profile/login.php">Log in</a>
+                        <a href="{{ route('login') }}">Log in</a>
                     </li>
                     <li>
-                        <a href="../profile/ ">View my page</a>
+                        <a href="{{ route('viewProfilePage', auth()->user()->name) }}">View my page</a>
                     </li>
                     <li>
-                        <a href="../dashboard/ ">Dashboard</a>
+                        <a href="{{ route('mainPage') }}">Dashboard</a>
                     </li>
-                    <li>
-                        <a href="../profile/home.php">Creators I
-                            follow</a>
-                    </li>
-                    <li class="divider">
-                        <a href="../dashboard/edit_profile.php">My account</a>
-                    </li>
+{{--                    <li>--}}
+{{--                        <a href="../profile/home.php">Creators I--}}
+{{--                            follow</a>--}}
+{{--                    </li>--}}
+{{--                    <li class="divider">--}}
+{{--                        <a href="../dashboard/edit_profile.php">My account</a>--}}
+{{--                    </li>--}}
 
                     <li>
                         <a href="#">Log out</a>
@@ -103,11 +103,11 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
 
                     </div>
                     <div class="profile_user_nav">
-                        <a href="/profile/{{ auth()->user()->id }}/" <?php $page = null; if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
-                        <a href="/profile/{{ auth()->user()->id }}/views" <?php if ($page == 'views') { ?> class="active" <?php } ?>>Views</a>
-                        <a href="/profile/{{ auth()->user()->id }}/extra" <?php if ($page == 'extra') { ?> class="active" <?php } ?>>Extra</a>
-                        <a href="/profile/{{ auth()->user()->id }}/membership" <?php if ($page == 'membership') { ?> class="active" <?php } ?>>Membership</a>
-                        <a href="/profile/{{ auth()->user()->id }}/post" <?php if ($page == 'post') { ?> class="active" <?php } ?>>Post</a>
+                        <a href="/{{ auth()->user()->name }}/" <?php $page = null; if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
+                        <a href="/{{ auth()->user()->name }}/views" <?php if ($page == 'views') { ?> class="active" <?php } ?>>Views</a>
+                        <a href="/{{ auth()->user()->name }}/extra" <?php if ($page == 'extra') { ?> class="active" <?php } ?>>Extra</a>
+                        <a href="/{{ auth()->user()->name }}/membership" <?php if ($page == 'membership') { ?> class="active" <?php } ?>>Membership</a>
+                        <a href="/{{ auth()->user()->name }}/post" <?php if ($page == 'post') { ?> class="active" <?php } ?>>Post</a>
                     </div>
                 </div>
             </div>
