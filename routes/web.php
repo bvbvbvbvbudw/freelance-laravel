@@ -101,6 +101,13 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/extras', [PagesController::class, 'showExtrasPage'])->name('viewExtrasPage');
     Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
 
+    Route::get('/edit_popup_profile', function (){
+        return view('dashboard.components.popups.edit_popup');
+    });
+
+    Route::get('/create_popup_profile', function (){
+        return view('dashboard.components.popups.create_popup_profile');
+    });
 
     Route::get('/view/publish', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
     Route::get('/post', [PagesController::class, 'showPostsPage'])->name('viewPostsPage');

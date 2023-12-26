@@ -84,13 +84,20 @@
     </header>
     <main class="profile_main login_main">
         <div class="login_container">
-            <form id="loginForm" class="login_form">
                 <h2 class="h3">Welcome back</h2>
+                <form class="login_form" method="POST" action="{{ route('login') }}">
+                    @csrf
                 <div class="edit_popup_input_group">
                     <input type="text" class="edit_input" name="email" placeholder="Email">
                 </div>
+                    <div class="edit_popup_input_group">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+                    </div>
+
                 <label id="email-error" class="error" for="email"></label>
-                <button class="blue_btn w_full flex flex-center">Continue with email</button>
+                <button class="blue_btn w_full flex flex-center" type="submit">Continue with email</button>
+                </form>
+
                 <div class="text-line">
                     <div class="s-12">or login with</div>
                 </div>
@@ -106,7 +113,6 @@
                         with
                         Twitter</a>
                 </div>
-            </form>
         </div>
     </main>
     <script>
@@ -117,14 +123,12 @@
                     required: true,
 
                 },
-
             },
             messages: {
 
                 email: "Email is required",
 
             },
-
         });
     </script>
 @endsection

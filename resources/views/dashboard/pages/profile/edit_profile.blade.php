@@ -1,5 +1,4 @@
 @extends('dashboard.app')
-
 @section('content')
     <main class="dashboard_main">
         @include('dashboard.components.columns.left_column')

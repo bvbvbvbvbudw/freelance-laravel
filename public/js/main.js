@@ -43,7 +43,9 @@ function sharePopup() {
 }
 
 function createPopup() {
-    openPopup('create_popup.php')
+    // openPopup('create_popup.php')
+    openPopup('create_popup_profile')
+
 }
 
 function extraPopup() {
@@ -53,7 +55,9 @@ function membershipPopup() {
     openPopup('member_popup.php')
 }
 function editPopup() {
-    openPopup('edit_popup.php')
+    // openPopup('edit_popup.php')
+    console.log('dwad')
+    openPopup('edit_popup_profile')
 }
 function signInPopup() {
     openPopup('signin_popup.php')
@@ -78,7 +82,7 @@ function applyBrandPopup() {
 function openPopup(file) {
     closePopup();
     $.ajax({
-        url: "/app/profile/" + file,
+        url: "" + file,
         type: 'GET',
         success: function (data) {
             $('body').append(data);
