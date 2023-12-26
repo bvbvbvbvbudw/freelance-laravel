@@ -39,13 +39,12 @@ function postImagePopup() {
 }
 
 function sharePopup() {
-    openPopup('share_popup.php')
+    openPopup('share_popup_profile')
 }
 
 function createPopup() {
     // openPopup('create_popup.php')
     openPopup('create_popup_profile')
-
 }
 
 function extraPopup() {
@@ -56,7 +55,6 @@ function membershipPopup() {
 }
 function editPopup() {
     // openPopup('edit_popup.php')
-    console.log('dwad')
     openPopup('edit_popup_profile')
 }
 function signInPopup() {

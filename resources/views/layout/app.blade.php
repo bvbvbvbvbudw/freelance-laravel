@@ -27,14 +27,38 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
         <img src="../img/png/light/logo_no_background.png">
     </div>
 
-    <form id="themeForm" method="get" action="" class="dashboard_header-nav-theme">
-{{--        <input type="hidden" name="theme" value="<?= $theme ?>">--}}
+    <form id="themeForm" class="dashboard_header-nav-theme">
+        <input type="hidden" name="theme" value="{{ $theme }}">
         <span>Dark Theme</span>
         <span class="switcher">
-{{--        <input <?php if ($theme == 'dark') { ?> checked <?php } ?> value="dark" onchange="themeSelect(this)"--}}
-{{--               type="checkbox" id="switch" /><label for="switch">Toggle</label>--}}
-      </span>
+        <input {{ $theme == 'dark' ? 'checked' : '' }} value="dark" onchange="themeSelect(this)" type="checkbox" id="switch">
+        <label for="switch">Toggle</label>
+    </span>
     </form>
+    <script>
+        function themeSelect(checkbox) {
+            // Update the hidden input value
+            $('#themeForm input[name="theme"]').val(checkbox.checked ? 'dark' : 'light');
+
+            // Send an AJAX request to update the theme on the server
+            $.ajax({
+                type: 'GET',
+                url: '/update-theme', // Replace with your actual route for updating the theme
+                data: $('#themeForm').serialize(), // Send the form data
+                success: function(response) {
+                    // Handle the response if needed
+                    console.log('Theme updated successfully');
+
+                    // Reload the page after updating the theme
+                    location.reload();
+                },
+                error: function(error) {
+                    // Handle errors if needed
+                    console.error('Failed to update theme');
+                }
+            });
+        }
+    </script>
     <Div class="profile_header_buttons">
         <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
         <a onclick="createPopup()" class="p_button_2" href="#">Create</a>

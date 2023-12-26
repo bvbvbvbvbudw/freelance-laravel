@@ -1,7 +1,8 @@
 <div class="popup-container">
     <div class="popup popup_light edit_popup_block">
 
-        <form class="edit_popup ">
+        <form class="edit_popup " action="{{ route('editProfile') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="edit_popup_header">
                 <div class="h2">Edit page</div>
                 <div class="edit_popup_actions">
@@ -15,13 +16,13 @@
                     <div>Profile photo</div>
                     <div>
                         <div class="edit_avatar_block">
-                            <input type="file" name="" id="avatar-input">
-                            <label for="avatar-input">
-                                <img id="avatar" src="../img/png/avatar.png" alt="">
-                            </label>
-                            <div class="edit_avatar_icon">
-                                <img src="../img/svg/icons/popup/<?= $theme ?>/ic_camera_enhance_24px.svg" alt="">
-                            </div>
+                                <input type="file" name="avatar" id="avatar-input">
+                                <label for="avatar-input">
+                                    <img id="avatar" src="../img/png/avatar.png" alt="">
+                                </label>
+                                <div class="edit_avatar_icon">
+                                    <img src="../img/svg/icons/popup/<?= $theme ?>/ic_camera_enhance_24px.svg" alt="">
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -29,7 +30,7 @@
                     <div>Full name</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" value="Alex Jeleazco">
+                            <input type="text" class="edit_input" name="username" value="Alex Jeleazco">
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@
                     <div>What are you creating?</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" value="Creates travel views">
+                            <input type="text" class="edit_input" name="creating" value="Creates travel views">
                         </div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                                                               class="_icon" alt=""></div>
                             <hr>
                             <div>
-                                <input type="text" class="edit_input" placeholder="My name is Alex and i share my trip view">
+                                <input type="text" class="edit_input" name="description-about" placeholder="My name is Alex and i share my trip view">
                             </div>
                         </div>
                     </div>
@@ -58,7 +59,7 @@
                     <div>Featured video</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" placeholder="Pate your YouTube or Video link here">
+                            <input type="text" class="edit_input" name="ytlink" placeholder="Pate your YouTube or Video link here">
                         </div>
                     </div>
                 </div>
@@ -69,7 +70,7 @@
                             <div class="edit_popup_input_group">
                                 <img class="edit_input_text" src="../img/svg/icons/popup/<?= $theme ?>/ic_link_48px.svg" class="_icon"
                                      alt="">
-                                <input type="text" class="edit_input" value="https://Website.com">
+                                <input type="text" name="website" class="edit_input" value="https://Website.com">
                                 <img onclick="removeSocial(this)" class="edit_input_text _icon"
                                      src="../img/svg/icons/<?= $theme ?>/ic_close_48px.svg" alt="">
                             </div>
@@ -112,7 +113,7 @@
                     <div>
                         <div class="edit_popup_input_group">
                             <span>@</span>
-                            <input type="text" class="edit_input" value="User name">
+                            <input type="text" class="edit_input" name="username-link" value="User name">
 
                         </div>
                     </div>

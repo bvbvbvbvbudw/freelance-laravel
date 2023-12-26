@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobsController;
@@ -102,12 +103,21 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
 
     Route::get('/edit_popup_profile', function (){
+        // auth user id
         return view('dashboard.components.popups.edit_popup');
     });
 
     Route::get('/create_popup_profile', function (){
+        // auth user id
         return view('dashboard.components.popups.create_popup_profile');
     });
+
+    Route::get('/share_popup_profile', function (){
+        // auth user id
+        return view('dashboard.components.popups.share_popup_profile');
+    });
+
+    Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');
 
     Route::get('/view/publish', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
     Route::get('/post', [PagesController::class, 'showPostsPage'])->name('viewPostsPage');
