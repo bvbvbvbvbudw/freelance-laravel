@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\User;
+use App\Models\UserInformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -11,7 +13,16 @@ class ProfileController extends Controller
 {
     public function editProfile(Request $request)
     {
-        Log::info($request);
-        // save information about user and save avatar in public_test, output information in popup and page profile view
+        $user = Auth::user();
+        $user_info = $user->info;
+        $user->name = isset($request->username) ? $request->username : "";
+        $user->save();
+        $user_info->description = isset($request->description) ? $request->description : "";
+        $user_info->creating = isset($request->creating) ? $request->creating : "";
+        $user_info->yt_link = isset($request->yt_link) ? $request->yt_link : "";
+        $user_info->website = isset($request->website) ? $request->website : "";
+        $user_info->username_link = isset($request->username_link) ? $request->username_link : "";
+        $user_info->save();
+        return redirect('/' . $user->name);
     }
 }
