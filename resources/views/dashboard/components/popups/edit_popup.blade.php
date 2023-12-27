@@ -46,7 +46,7 @@
                     <div>About me</div>
                     <div>
                         <div class="edit_popup_input_group input_group_column">
-                            <div class="edit_input_text"><img src="{{ asset('img/svg/icons/popup' . $theme . '/ic_link_48px.svg') }}"
+                            <div class="edit_input_text"><img src="{{ asset('img/svg/icons/popup/' . $theme . '/ic_link_48px.svg') }}"
                                                               class="_icon" alt="icon"></div>
                             <hr>
                             <div>

@@ -1,7 +1,7 @@
 <div class="popup-container">
     <div class="popup popup_light create_popup_block">
         <div class="popup_close" onclick="closePopup()"><img class="_icon"
-                                                             src="{{ asset('img/svg/icons/ ' . $theme . '/ic_close_48px.svg') }}" alt="icon">
+                                                             src="{{asset('img/svg/icons/' . $theme . '/ic_close_48px.svg') }}" alt="icon">
         </div>
         <div class="create_popup">
             <h2 style="margin-top:-25px" class="s-20 bold">What you want to create?</h2>

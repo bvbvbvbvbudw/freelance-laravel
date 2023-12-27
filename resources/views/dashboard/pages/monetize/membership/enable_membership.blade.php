@@ -1,4 +1,3 @@
-<?php $theme = 'light '?>
 @extends('dashboard.app')
 @section('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
@@ -43,7 +42,7 @@
                         <div>
                             <div id="dropzone-container" class="dropzone dropzone_green dropzone_sm br-10 mt-16">
                                 <div class="dz-default dz-message">
-                                    <div><img style="height:40px" src="{{ asset('img/svg/icons/' . $theme . '/ic_filter_48px2.svg') }}" alt="icon"></div>
+                                    <div><img style="height:40px" src="{{ asset('img/svg/icons/'. $theme . '/ic_filter_48px2.svg') }}" alt="icon"></div>
                                     <h2 class="mt-16">Upload image or <span>drag and drop</span></h2>
                                 </div>
                             </div>
