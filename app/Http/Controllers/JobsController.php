@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,6 +12,18 @@ class JobsController extends Controller
     /**
      * Display a listing of the resource.
      */
+    private $current_user;
+    private $request_user;
+
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $username = $request->route('username'); // Отримання значення параметра 'username' з URL
+            $this->current_user = Auth::user();
+            $this->request_user = User::where('name', $username)->first();
+            return $next($request);
+        });
+    }
     public function index()
     {
         $user = Auth::user();
@@ -19,7 +32,7 @@ class JobsController extends Controller
 
 //        return view('jobs.index')->with('jobs', $jobs);
 //        return 123;
-        return view('dashboard.pages.jobs.jobs')->with('jobs', $jobs);
+        return view('dashboard.pages.jobs.jobs', ['user' => $this->current_user, 'req_user' => $this->request_user])->with('jobs', $jobs);
     }
 
     /**
@@ -90,7 +103,7 @@ class JobsController extends Controller
         ];
 
 //        return view('jobs.show')->with('data', $data);
-        return view('dashboard.pages.jobs.jobs_details')->with('data', $data);
+        return view('dashboard.pages.jobs.jobs_details',['user' => $this->current_user, 'req_user' => $this->request_user])->with('data', $data);
     }
 
     /**

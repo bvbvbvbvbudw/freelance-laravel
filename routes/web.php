@@ -8,6 +8,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ThreadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,13 +24,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
+//    return view('welcome');
 });
+
+
 
 Auth::routes();
 
 
-
+Route::redirect('/home', '/app/dashboard');
 
 Route::middleware(['auth'])->group(function (){
     Route::prefix('app')->group(function () {
@@ -46,7 +50,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/messages', [PagesController::class, 'showMessagesPage'])->name('viewMessagePage');
 
         Route::resource('/jobs', JobsController::class)->names('viewJobsPage');
-//        Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
+        Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
 
         Route::get('/integrations', [PagesController::class, 'showIntegrationsPage'])->name('viewIntegrationsPage');
         Route::get('/payouts', [PagesController::class, 'showPayoutsPage'])->name('viewPayoutsPage');
@@ -68,8 +72,9 @@ Route::middleware(['auth'])->group(function (){
         Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
 
         Route::get('/edit_popup_profile', function (){
-            // auth user id
-            return view('dashboard.components.popups.edit_popup');
+            $user = Auth::user();
+            $user_info = $user->info;
+            return view('dashboard.components.popups.edit_popup', ['user_info' => $user_info, 'user' => $user]);
         })->name('editPopup');
 
         Route::get('/create_popup_profile', function (){

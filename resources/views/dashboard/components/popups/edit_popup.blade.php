@@ -30,7 +30,7 @@
                     <div>Full name</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" name="username" value="Alex Jeleazco">
+                            <input type="text" class="edit_input" name="username" value="{{isset($user) ? $user->name : ''}}">
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <div>What are you creating?</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" name="creating" value="Creates travel views">
+                            <input type="text" class="edit_input" name="creating" value="{{isset($user_info) ? $user_info->creating : ''}}">
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                                                               class="_icon" alt=""></div>
                             <hr>
                             <div>
-                                <input type="text" class="edit_input" name="description-about" placeholder="My name is Alex and i share my trip view">
+                                <textarea class="edit_input" name="description" placeholder="Type your description here">{{isset($user_info) ? $user_info->description : ''}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div>Featured video</div>
                     <div>
                         <div class="edit_popup_input_group">
-                            <input type="text" class="edit_input" name="ytlink" placeholder="Pate your YouTube or Video link here">
+                            <input type="text" class="edit_input" name="ytlink" placeholder="Pate your YouTube or Video link here" value="{{isset($user_info) ? $user_info->yt_link : ''}}">
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div>
                         <div class="edit_popup_input_group edit_popup_input_group_transparent">
                             <span style="height:15px;width:15px;background-color:#5F7FFF"></span>
-                            <select type="text" class="edit_input" value="https://Website.com">
+                            <select type="text" class="edit_input">
                                 <option selected value="5F7FFF">#5F7FFF</option>
                             </select>
 
@@ -113,8 +113,7 @@
                     <div>
                         <div class="edit_popup_input_group">
                             <span>@</span>
-                            <input type="text" class="edit_input" name="username-link" value="User name">
-
+                            <input type="text" class="edit_input" name="username-link" value="{{isset($user_info) ? $user_info->username_link : ''}}">
                         </div>
                     </div>
                 </div>
