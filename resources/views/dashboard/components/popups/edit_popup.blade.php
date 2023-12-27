@@ -18,7 +18,8 @@
                         <div class="edit_avatar_block">
                                 <input type="file" name="avatar" id="avatar-input">
                                 <label for="avatar-input">
-                                    <img id="avatar" src="../img/png/avatar.png" alt="">
+{{--                                    <img id="avatar" src="../img/png/avatar.png" alt="">--}}
+                                    <img id="avatar" src="{{isset($user_info->avatar) ? asset($user_info->avatar) : '../img/png/avatar.png'}}" alt="">
                                 </label>
                                 <div class="edit_avatar_icon">
                                     <img src="../img/svg/icons/popup/<?= $theme ?>/ic_camera_enhance_24px.svg" alt="">
@@ -138,4 +139,18 @@
         }
     }
 
+</script>
+<script>
+    $(document).ready(function(){
+        $('#avatar-input').change(function(){
+            const file = $(this)[0].files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#avatar').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(file);
+        });
+    });
 </script>

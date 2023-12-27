@@ -38,7 +38,9 @@ if($user && $req_user) {
                                 <div class="active">1</div>
                                 <div>3</div>
                                 <div>5</div>
-                                <div><input type="text" name="" id="" value="10"></div>
+                                <div>10</div>
+
+
                             </div>
                         </div>
                         <div class="border_dashboard input_group input_group_full">
@@ -49,7 +51,12 @@ if($user && $req_user) {
                     placeholder="Say something nice (optional)"></textarea>
                         </div>
                         <div>
-                            <button onclick="paymentBlock()" id="support_button" class="w_full blue_btn">Support $5</button>
+                            <form id="supportForm" method="post" action="{{route('paymentPopup')}}">
+                                @csrf
+                                <input type="hidden" name="donate" id="donate" value="5">
+                                <input type="hidden" name="id" id="id" value="{{$req_user->id}}">
+                                <button onclick="paymentPopup1(event)" id="support_button" class="w_full blue_btn">Support $5</button>
+                            </form>
                         </div>
                     </div>
                     <form class="my_invite_content" style="display:none">
@@ -57,7 +64,7 @@ if($user && $req_user) {
                             <img src="../img/png/avatar.png" alt="">
                         </div>
                         <div>
-                            <p class="s-18 bold">Take part in Alex Jeleazco<br> view!</p>
+                            <p class="s-18 bold">Take part in {{isset($is_current_user) ? $is_current_user->name : "" }}<br> view!</p>
                         </div>
                         <div><a href="../dashboard/brands.php" class="blue_btn">Invite for job</a></div>
                         <div><a href="../profile/login.php " class="white_btn">Log in</a></div>
@@ -70,14 +77,6 @@ if($user && $req_user) {
             <div class="profile_border1 br-20 p-24-24" @if($hide_edit_block) style="width: 100%" @endif >
                 <div>
                     {{isset($is_current_user->info) ? $is_current_user->info->description : "" }}
-{{--                    Hey there, thanks for watching and following along in my journey. A few people have asked how they can do--}}
-{{--                    something nice for me directly, whether it be, sand me love and support or otherwise invite me for a job.--}}
-{{--                    <br><br>I love to travel and especially go for good views of nature, exotic islands, tasty restaurants with a--}}
-{{--                    special atmosphere and hotels with amazing views. Thanks for your love and support!<br> <br>1x 😍 as a thank--}}
-{{--                    you.<br><br>3x 😍 to make my day!<br><br>5x 😍 to make my meal!!<br><br>10x 😍 or more and I go for a new view!--}}
-{{--                    😍<br><br>I created this community for travelers & creators like me to help travel and make a living from--}}
-{{--                    it!<br>Now available, Live event ticket, membership and much more, visit https://mytripview.com<br><br>Alex--}}
-{{--                    Jeleazco, CO founder--}}
                 </div>
 {{--                <div class="flex">--}}
 {{--                    <a class="support_play_arrow"><img class="_icon_medium"--}}
@@ -215,6 +214,7 @@ if($user && $req_user) {
         {{--    editPopup();--}}
         {{--    <?php } ?>--}}
         {{--});--}}
+        var donateValue = $('#donate').val(); // Початкове значення
 
         $('.support_select > *').click(function () {
             $('.support_select > *').removeClass('active');
@@ -228,11 +228,13 @@ if($user && $req_user) {
 
             $('#support_button').text('Support $' + price)
             $('#support_qtty').text(price);
+            $('#donate').val(price);
         });
         $('.support_select input').on('change', function () {
             let price = $(this).val() * 5;
             $('#support_button').text('Support $' + price)
             $('#support_qtty').text(price);
+            $('#donate').val(price);
         });
 
 
@@ -266,9 +268,7 @@ if($user && $req_user) {
 
         });
 
-        function paymentBlock() {
-            paymentPopup();
-        }
+
 
         $('.card_input_block input').unbind('keyup change input paste').bind('keyup change input paste', function (e) {
             var $this = $(this);
@@ -281,6 +281,21 @@ if($user && $req_user) {
         });
 
 
+        function paymentPopup1(e) {
+            e.preventDefault(); // Відміна типової поведінки кнопки
 
+            var formData = $('#supportForm').serialize();
+            $.ajax({
+                url: $('#supportForm').attr('action'),
+                type: 'POST',
+                data: formData,
+                success: function (data) {
+                    $('body').append(data);
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
     </script>
 @endsection

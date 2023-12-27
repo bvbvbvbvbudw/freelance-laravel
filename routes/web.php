@@ -7,8 +7,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ThreadController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,13 +35,26 @@ Auth::routes();
 Route::prefix('popups')->group(function(){
     Route::get('/edit_popup_profile', function (){
         // auth user id
-        return view('dashboard.components.popups.edit_popup');
+        $current_user = Auth::user();
+        return view('dashboard.components.popups.edit_popup', ['user' => $current_user, "user_info" => $current_user->info ]);
     })->name('editPopup');
 
     Route::get('/create_popup_profile', function (){
         // auth user id
         return view('dashboard.components.popups.create_popup_profile');
     })->name('createPopup');
+
+    Route::post('/payment_popup', function () {
+        $donate = isset($_POST['donate']) ? $_POST['donate'] : 0;
+        $current_user = Auth::user();
+        if(isset($_POST['id'])) {
+            $request_user = User::where('id', (int)$_POST['id'])->first();
+        } else {
+            $request_user = false;
+        }
+
+        return view('dashboard.components.popups.payment_popup', ['user' => $current_user, 'req_user' => $request_user, 'donate' => $donate]);
+    })->name('paymentPopup');
 
     Route::get('/share_popup_profile', function (){
         // auth user id
@@ -156,7 +171,7 @@ Route::middleware(['auth'])->group(function (){
 //    Route::get('/{username}/post', [PagesController::class, 'showPostProfilePage'])->name('viewPostProfilePage');
 //    Route::get('/{username}/extra', [PagesController::class, 'showExtraProfilePage'])->name('viewExtraProfilePage');
 //    Route::get('/{username}/edit', [PagesController::class, 'showEditProfilePage'])->name('viewEditProfilePage');
-    
+
     Route::get('/update-theme', function () {
         $theme = Request::input('theme', 'light');
         Cookie::queue('theme', $theme, 60 * 24 * 365);
