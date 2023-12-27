@@ -18,6 +18,7 @@ class JobsController extends Controller
         $jobs = Job::all();
 
 //        return view('jobs.index')->with('jobs', $jobs);
+//        return 123;
         return view('dashboard.pages.jobs.jobs')->with('jobs', $jobs);
     }
 

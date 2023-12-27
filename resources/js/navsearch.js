@@ -1,5 +1,5 @@
-const nav = $('.dashboard_navsearch_block-nav');
-const options = nav.find('li');
+const navtt = $('.dashboard_navsearch_block-nav');
+const options = navtt.find('li');
 
 options.on('click', function () {
 

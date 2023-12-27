@@ -80,7 +80,7 @@ function applyBrandPopup() {
 function openPopup(file) {
     closePopup();
     $.ajax({
-        url: "" + file,
+        url: "/app/" + file,
         type: 'GET',
         success: function (data) {
             $('body').append(data);

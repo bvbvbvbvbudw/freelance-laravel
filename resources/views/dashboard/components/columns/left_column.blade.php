@@ -1,10 +1,9 @@
-<?php $theme = 'light' ?>
 <nav class="left_column bg_secondary">
     <div class="nav_category">
         <ul class="nav_category-list">
             <li><a href="{{route('mainPage')}}"><img src="../img/svg/icons/<?= $theme ?>/icon _home_.svg">Home</a>
             </li>
-            <li><a href="{{route('viewProfilePage', auth()->user()->name)}}"><img src="../img/svg/icons/<?= $theme ?>/icon _dashboard_.svg">View
+            <li><a href="{{route('viewViewProfilePage', auth()->user()->name)}}"><img src="../img/svg/icons/<?= $theme ?>/icon _dashboard_.svg">View
                     Page</a></li>
         </ul>
         <div class="nav_category-name">Monetize</div>
