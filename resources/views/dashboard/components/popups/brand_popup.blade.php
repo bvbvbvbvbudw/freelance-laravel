@@ -2,7 +2,7 @@
 <div class="popup-container">
     <div class="popup popup_light applybrand_popup_block">
         <div class="popup_close" onclick="closePopup()"><img class="_icon"
-                                                             src="../img/svg/icons/<?= $theme ?>/ic_close_48px.svg" alt="">
+                                                             src="{{ asset('img/svg/icons/' . $theme . '/ic_close_48px.svg') }}" alt="icon">
         </div>
         <form class="apply brand_popup" action="{{ route('register') }}" method="POST">
             @csrf

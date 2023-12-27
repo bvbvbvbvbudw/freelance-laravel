@@ -4,7 +4,7 @@ $theme_reverse = 'dark' ?>
 @section('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" type="text/css" />
-    <link rel="stylesheet" href="../css/dropzone.css" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}" type="text/css" />
     <main class="dashboard_main">
         @include('dashboard.components.columns.left_column')
         <div class="content">
@@ -30,7 +30,7 @@ $theme_reverse = 'dark' ?>
                         <div id="dropzone-container" class="dropzone br-10 mt-16">
                             <label for="fileInput" class="file-label">
                                 <div class="dz-default dz-message">
-                                    <div><img src="../img/svg/icons/<?= $theme ?>/ic_filter_48px3.svg"></div>
+                                    <div><img src="{{ asset('img/svg/icons/' . $theme . '/ic_filter_48px3.svg') }}" alt="icon"></div>
                                     <h2 class="mt-16">Upload image or <span id="fileLabel">drag and drop.</span></h2>
                                 </div>
                             </label>
@@ -41,7 +41,7 @@ $theme_reverse = 'dark' ?>
                     </div>
                     <div class="newpost_actions">
                         <a href="{{ route('viewPostsPage') }}" class="button button_2">
-                            <img class="_icon" src="../img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_left_48px2.svg">
+                            <img class="_icon" src="{{ asset('img/svg/icons/' . $theme . '/ic_keyboard_arrow_left_48px2.svg') }}">
                             Dashboard
                         </a>
                         <div class="button_with_dropdown  mt-16">
@@ -49,6 +49,7 @@ $theme_reverse = 'dark' ?>
                             <div class="dropdown">
                                 <div class="dropbtn arrow_dropbtn light_border">
                                     <img class="_icon-big" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                                    <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}">
                                 </div>
                                 <select name="statuses_post" id="">
                                     <option value="1">Public now</option>

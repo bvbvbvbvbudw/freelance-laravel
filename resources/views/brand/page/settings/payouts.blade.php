@@ -13,7 +13,7 @@
 
             </div>
             <div class="dashboard_supporters_block border_dashboard dashboard_block dashboard_info_block bg_secondary">
-                <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _bolt_2.svg">
+                <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _bolt_2.svg') }}" alt="icon">
                 <h2 class="h2"> Set up Instant Payouts</h2>
                 <p>Get paid to your local bank account automatically. No minimum threshold. If you don’t have a Stripe account,
                     you’ll be asked to create one for free.</p>

@@ -40,7 +40,7 @@
                     <p class="s-18">We recommend an image should be square, at least 1080x1080px, and JPG, PNG or GIF format.</p>
                     <div class="extra_dropdown">
             <span class="extra_dropdow_text"><img class="_icon-big"
-                                                  src="../img/svg/icons/<?= $theme ?>/file_upload.svg">Upload</span>
+                                                  src="{{ asset('img/svg/icons/' . $theme . '/file_upload.svg') }}" alt="icon upload file">Upload</span>
                     </div>
                 </div>
 
@@ -94,15 +94,9 @@
                 <hr>
                 <button class="button button_1 w_full flex flex-center main_color_important">Add job</button>
             </div>
-
         </div>
-
-
-
-
-
     </div>
 </main>
-<script src="../js/date-picker.js"></script>
+<script src="{{ asset('js/date-picker.js') }}"></script>
 @include('brand.components.footer')
 @endsection

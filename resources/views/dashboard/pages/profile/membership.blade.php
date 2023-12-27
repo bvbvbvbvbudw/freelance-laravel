@@ -3,7 +3,7 @@
     <div class="profile_container">
         <div onclick="membershipPopup()" class="profile_block profile_border1 br-20 p_membership_block">
             <div class="p_memberhip_header">
-                <div><img src="../img/png/avatar.png" alt=""></div>
+                <div><img src="{{ asset('img/png/avatar.png') }}" alt="avatar"></div>
                 <div class="s-18 bold">Alex's Monthly view Club!</div>
                 <div class="s-32 bold text text-active">$99</div>
                 <div class="s-12 medium light_grey">PER MONTH</div>

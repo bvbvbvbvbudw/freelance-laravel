@@ -78,9 +78,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('/post/new', [PagesController::class, 'showPostsCreatePage'])->name('viewPostsCreatePage');
             Route::get('/post/audio/new', [PagesController::class, 'showPostsAudioCreatePage'])->name('viewPostsAudioCreatePage');
             Route::get('/post/album/new', [PagesController::class, 'showPostsAlbumCreatePage'])->name('viewPostsAlbumCreatePage');
-            Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
-            Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');
-            Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
+
         });
 
     });
@@ -104,6 +102,8 @@ Route::middleware(['auth'])->group(function (){
 
     });
 
+    Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
+    Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');
 
     Route::get('/{username}', [PagesController::class, 'showViewPage'])->name('viewProfilePage');;
     Route::get('/{username}/views', [PagesController::class, 'showViewProfilePage'])->name('viewViewProfilePage');
@@ -156,7 +156,7 @@ Route::middleware(['auth'])->group(function (){
 //    Route::get('/{username}/post', [PagesController::class, 'showPostProfilePage'])->name('viewPostProfilePage');
 //    Route::get('/{username}/extra', [PagesController::class, 'showExtraProfilePage'])->name('viewExtraProfilePage');
 //    Route::get('/{username}/edit', [PagesController::class, 'showEditProfilePage'])->name('viewEditProfilePage');
-    
+
     Route::get('/update-theme', function () {
         $theme = Request::input('theme', 'light');
         Cookie::queue('theme', $theme, 60 * 24 * 365);

@@ -15,14 +15,14 @@
                 </div>
                 <div class="membersip_blocks">
                     <div class="membersip_block">
-                        <img style="float:left" src="../img/png/room.png">
+                        <img style="float:left" src="{{ asset('img/png/room.png') }}" alt="icon">
                         <h3 class="h3">Earn recurring income</h3>
                         <p>Memberships are a great way to build recurring revenue, create engagement, and build deep and meaningful
                             relationships with your fans. Start earning monthly/yearly upfront payments doing what you love!</p>
                     </div>
                     <div class="clearfix"></div>
                     <div class="membersip_block">
-                        <img style="float:right" src="../img/png/room.png">
+                        <img style="float:right" src="{{ asset('img/png/room.png') }}" alt="icon">
                         <h3 class="h3">Earn recurring income</h3>
                         <p>Memberships are a great way to build recurring revenue, create engagement, and build deep and meaningful
                             relationships with your fans. Start earning monthly/yearly upfront payments doing what you love!</p>

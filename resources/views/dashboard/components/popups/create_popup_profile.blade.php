@@ -1,21 +1,21 @@
 <div class="popup-container">
     <div class="popup popup_light create_popup_block">
         <div class="popup_close" onclick="closePopup()"><img class="_icon"
-                                                             src="../img/svg/icons/<?= $theme ?>/ic_close_48px.svg" alt="">
+                                                             src="{{ route('img/svg/icons/ ' . $theme . '/ic_close_48px.svg') }}" alt="icon">
         </div>
         <div class="create_popup">
             <h2 style="margin-top:-25px" class="s-20 bold">What you want to create?</h2>
             <div class="popup_tiles">
-                <a href="../dashboard/view.php"><img class="_icon" src="../img/svg/icons/popup/<?= $theme ?>/view.svg"
-                                                     alt="">View</a>
-                <a href="../dashboard/post.php"><img class="_icon" src="../img/svg/icons/popup/<?= $theme ?>/post.svg"
-                                                     alt="">Post</a>
-                <a href="../dashboard/membership.php"><img class="_icon"
-                                                           src="../img/svg/icons/popup/<?= $theme ?>/membership.svg" alt="">Membership</a>
-                <a href="../dashboard/extras.php"><img class="_icon" src="../img/svg/icons/popup/<?= $theme ?>/extra.svg"
+                <a href="{{ route('viewPublishPage') }}"><img class="_icon" src="{{ asset('img/svg/icons/popup/' . $theme . '/view.svg') }}"
+                                                     alt="icon">View</a>
+                <a href="{{ route('viewJobsPage.index') }}"><img class="_icon" src="{{ asset('img/svg/icons/popup/' . $theme . '/post.svg') }}"
+                                                     alt="icon">Post</a>
+
+                <a href="{{ route('viewMembershipPage') }}"><img class="_icon"
+                                                           src="{{ asset('img/svg/icons/popup/' . $theme . '/membership.svg') }}" alt="icon">Membership</a>
+                <a href="{{ route('viewExtrasPage') }}"><img class="_icon" src="{{ asset('img/svg/icons/popup/' . $theme . '/extra.svg') }}"
                                                        alt="">Extra</a>
             </div>
-
         </div>
     </div>
 </div>

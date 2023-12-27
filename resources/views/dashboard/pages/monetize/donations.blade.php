@@ -14,20 +14,20 @@
                     <div class="row-3 donation_statistics statistics mt-16">
                         <div class="border_dashboard br-10">
                             <h2 class="h1">0</h2>
-                            <p class="s-18 mt-16"><img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/icon _favorite_.svg">
+                            <p class="s-18 mt-16"><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_.svg') }}" alt="icon">
                                 0
                                 supporter</p>
                         </div>
                         <div class="border_dashboard br-10">
                             <h2 class="h1">$0</h2>
                             <p class="s-18 mt-16"><img class="_icon_medium"
-                                                       src="../img/svg/icons/<?= $theme ?>/ic_date_range_48px.svg">
+                                                       src="{{ asset('img/svg/icons/' . $theme . '/ic_date_range_48px.svg') }}" alt="icon">
                                 Last 30 Days</p>
                         </div>
                         <div class="border_dashboard br-10">
                             <h2 class="h1">$0</h2>
                             <p class="s-18 mt-16"><img class="_icon_medium"
-                                                       src="../img/svg/icons/<?= $theme ?>/icon _attach money_.svg">
+                                                       src="{{ asset('img/svg/icons/' . $theme . '/icon _attach money_.svg') }}" alt="icon">
                                 All time</p>
                         </div>
                     </div>

@@ -12,11 +12,11 @@
                 </div>
                 <div class="dashboard_actions mt-16">
                     <a href="{{route('viewPostsCreatePage')}}" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
-                        <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/icon _lock_.svg">
+                        <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon _lock_.svg') }}" alt="icon">
                         Write a post
                     </a>
                     <a href="{{ route('viewPostsAlbumCreatePage') }}" class="dashboard_action border_dashboard br-10 s-20 medium bg_four">
-                        <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/icon _shopping bag_.svg">
+                        <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon _shopping bag_.svg') }}">
                         Add an album
                     </a>
 
@@ -29,7 +29,7 @@
                     </ul>
                     <div class=" dashboard_navsearch_block-actions">
                         <button class="button_noappearance">
-                            <img class=" _icon_medium" src="../img/svg/icons/<?= $theme ?>/ic_search_48px.svg">
+                            <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px.svg') }}">
                         </button>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="dashboard_post_info">
                         <div>Posted at Sep 29,2023 at 3:49 PM</div>
                         <div>
-                            <img class="_icon" src="../img/svg/icons/<?= $theme ?>/ic_more_horiz_48px.svg">
+                            <img class="_icon" src="{{ asset('img/svg/icons/' . $theme . '/ic_more_horiz_48px.svg') }}">
                         </div>
                     </div>
                     <div class="dashboard_post_text mt-16">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="dashboard_supporters_block border_dashboard dashboard_block dashboard_info_block bg_secondary">
-                    <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+                    <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}">
                     <h2 class="h2">Publish your first post</h2>
                     <p>Post public posts or make them exclusive to your supporters or members. Creators who post exclusives
                         regularly
@@ -67,7 +67,7 @@
             </div>
             <div class="navs_block" id="drafted_block" style="display:none">
                 <div class="dashboard_supporters_block border_dashboard dashboard_block bg_secondary">
-                    <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+                    <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}">
                     <h2 class="h2">Manage your drafts</h2>
                     <p>This is a place for all your unfinished posts. If you wish to save the progress on your post and finish it
                         later, save it as a draft.</p>
@@ -75,7 +75,7 @@
             </div>
             <div class="navs_block" id="scheduled_block" style="display:none">
                 <div class="dashboard_supporters_block border_dashboard dashboard_block bg_secondary">
-                    <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+                    <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}">
                     <h2 class="h2">Schedule posts to publish later</h2>
                     <p>Taking some time off? Prepare your post and schedule it out for a later date and time.</p>
                 </div>

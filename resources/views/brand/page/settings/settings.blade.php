@@ -11,10 +11,8 @@
                         <li data-nav="notifications">Notifications</li>
                     </ul>
                 </div>
-
                 <div id="settings_block" class="navs_block">
                     @include('dashboard.components.settings.setings')
-
                 </div>
                 <div id="notifications_block" style="display:none" class="navs_block">
                     @include('dashboard.components.settings.notifications')

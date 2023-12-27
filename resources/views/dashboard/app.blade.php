@@ -21,7 +21,7 @@
 
 <header class="dashboard_header bg_third">
     <div class="dashboard_header-logo">
-        <img src="../img/png/light/logo_no_background.png">
+        <img src="{{ asset('img/png/' . $theme . '/logo_no_background.png') }}" alt="logo">
     </div>
 
     <form id="themeForm" class="dashboard_header-nav-theme">
@@ -34,30 +34,26 @@
     </form>
     <script>
         function themeSelect(checkbox) {
-            // Update the hidden input value
             $('#themeForm input[name="theme"]').val(checkbox.checked ? 'dark' : 'light');
-
-            // Send an AJAX request to update the theme on the server
             $.ajax({
                 type: 'GET',
-                url: '/update-theme', // Replace with your actual route for updating the theme
-                data: $('#themeForm').serialize(), // Send the form data
+                url: '/update-theme',
+                data: $('#themeForm').serialize(),
                 success: function(response) {
                     location.reload();
                 },
                 error: function(error) {
-                    // Handle errors if needed
                     console.error('Failed to update theme');
                 }
             });
         }
     </script>
-    @if($user)
-        <Div class="profile_header_buttons">
+    @if(isset($user) && $user)
+        <div class="profile_header_buttons">
             <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
             <a onclick="createPopup()" class="p_button_2" href="#">Create</a>
-            <a onclick="sharePopup()" class="p_button_1 p_button_round" href="#"><img class="_icon_medium" src="../img/svg/icons/light/Share Rounded.svg" alt=""></a>
-        </Div>
+            <a onclick="sharePopup()" class="p_button_1 p_button_round" href="#"><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/Share Rounded.svg') }}" alt=""></a>
+        </div>
     @endif
     <div class="sharepage_button-block dropdown dropdown_color2">
         <div class="profile_header-nav-profile  dashboard_header-nav-profile p_profile_header-nav-profile dropbtn">
@@ -67,33 +63,19 @@
                 <span></span>
             </div>
             <div class="profile_header-nav-profile-icon dashboard_header-nav-profile-icon">
-                <img src="../img/svg/profile_icon.svg">
+                <img src="{{ asset('img/svg/profile_icon.svg') }}" alt="profile icon">
             </div>
         </div>
         <div class="dropdown-content-block dropdown-left ">
             <div class="dropdown-content sharepage_dropdown ">
                 <ul class="dropdown-list">
-{{--                    <li>--}}
-{{--                        <a href="{{ route('register') }}">Start a page</a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <a href="{{ route('login') }}">Log in</a>--}}
-{{--                    </li>--}}
+
                     <li>
-{{--                        <a href="/profile/{{ auth()->user()->id }}">View my page</a>--}}
                         <a href="{{ route('viewProfilePage', auth()->user()->name) }}">View my page</a>
                     </li>
                     <li>
                         <a href="{{ route('mainPage') }}">Dashboard</a>
                     </li>
-{{--                    <li>--}}
-{{--                        <a href="#">Creators I--}}
-{{--                            follow</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="divider">--}}
-{{--                        <a href="/profile/{{auth()->user()->id}}">My account</a>--}}
-{{--                    </li>--}}
-
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -122,8 +104,8 @@
         <li>Refer a Creator</li>
     </ul>
 </footer>
-<script src="../js/main.js"></script>
-<script src="../js/navsearch.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/navsearch.js') }}"></script>
 </body>
 
 </html>

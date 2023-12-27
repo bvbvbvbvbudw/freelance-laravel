@@ -2,7 +2,7 @@
 @section('content')
     <header class="profile_header bg_third login_header">
         <div class="profile_header-logo">
-            <img src="../img/png/<?= $theme ?>/logo_no_background.png">
+            <img src="{{asset('img/png/' . $theme . '/logo_no_background.png')}}" alt="icon">
         </div>
         <div class="login_header-actions">
             <p class="s-14">Already have an account</p>
@@ -57,7 +57,7 @@
 
                     <div class="row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="blue_btn w_full flex flex-center">Continue with email</button>
+                            <button type="submit" class="blue_btn w_full flex flex-center">Sign in with email</button>
                         </div>
                     </div>
                 </form>
@@ -65,14 +65,14 @@
                     <div class="s-12">or signup with</div>
                 </div>
                 <div class="login_social_list">
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/google.svg" alt=""> Sign up
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/google.svg')}}" alt="icon"> Sign in
                         with Google</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/facebook.svg" alt=""> Sign up
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/facebook.svg')}}" alt="icon"> Sign in
                         with
                         Facebook</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/apple.svg" alt=""> Sign up with
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/apple.svg')}}" alt="icon"> Sign in with
                         Apple</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/X_white.svg" alt=""> Sign up
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/X_white.svg')}}" alt="icon"> Sign in
                         with
                         Twitter</a>
                     <a class="btn_bordered login_social" onclick="applyBrandPopup()">

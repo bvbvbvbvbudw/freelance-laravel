@@ -14,7 +14,7 @@
 <body>
 <header class="dashboard_header bg_third">
     <div class="dashboard_header-logo">
-        <img src="../img/png/<?= $theme ?>/logo_no_background.png">
+        <img src="{{ asset('img/png/' . $theme . '/logo_no_background.png') }}">
     </div>
 
     <form id="themeForm" class="dashboard_header-nav-theme">
@@ -27,23 +27,16 @@
     </form>
     <script>
         function themeSelect(checkbox) {
-            // Update the hidden input value
             $('#themeForm input[name="theme"]').val(checkbox.checked ? 'dark' : 'light');
-
-            // Send an AJAX request to update the theme on the server
             $.ajax({
                 type: 'GET',
-                url: '/update-theme', // Replace with your actual route for updating the theme
-                data: $('#themeForm').serialize(), // Send the form data
+                url: '/update-theme',
+                data: $('#themeForm').serialize(),
                 success: function(response) {
-                    // Handle the response if needed
                     console.log('Theme updated successfully');
-
-                    // Reload the page after updating the theme
                     location.reload();
                 },
                 error: function(error) {
-                    // Handle errors if needed
                     console.error('Failed to update theme');
                 }
             });
@@ -57,30 +50,17 @@
                 <span></span>
             </div>
             <div class="profile_header-nav-profile-icon dashboard_header-nav-profile-icon">
-                <img src="../img/svg/profile_icon.svg">
+                <img src="{{ asset('img/svg/profile_icon.svg') }}" alt="icon">
             </div>
         </div>
         <div class="dropdown-content-block dropdown-left ">
             <div class="dropdown-content sharepage_dropdown ">
                 <ul class="dropdown-list">
                     <li>
-                        <a href="../profile/sign_up.php">Start a page</a>
+                        <a href="{{ route('viewProfilePage', auth()->user()->name) }}">View my page</a>
                     </li>
                     <li>
-                        <a href="../profile/login.php">Log in</a>
-                    </li>
-                    <li>
-                        <a href="../profile/ ">View my page</a>
-                    </li>
-                    <li>
-                        <a href="../dashboard/ ">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="../profile/home.php">Creators I
-                            follow</a>
-                    </li>
-                    <li class="divider">
-                        <a href="../dashboard/edit_profile.php">My account</a>
+                        <a href="{{route('brandDashboard')}}">Dashboard</a>
                     </li>
 
                     <li>

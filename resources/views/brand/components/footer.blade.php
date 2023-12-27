@@ -6,8 +6,7 @@
         <li>Refer a Creator</li>
     </ul>
 </footer>
-<script src="../js/main.js"></script>
-<script src="../js/navsearch.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/navsearch.js') }}"></script>
 </body>
-
 </html>

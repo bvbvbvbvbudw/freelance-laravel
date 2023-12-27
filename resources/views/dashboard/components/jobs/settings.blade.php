@@ -3,11 +3,11 @@
     <div class="mt-16 p-16-16 settings-profile border_dashboard3 br-10">
         <div>
             <div>
-                <img class="avatar_img" src="../../img/png/avatar.png">
+                <img class="avatar_img" src="{{ asset('img/png/avatar.png') }}" alt="avatar">
             </div>
             <div>
                 <div class="s-20-s">Johnny FD - TikTok acc (Johnny098) <span
-                        class="user_country border_dashboard3 br-5 s-20-s"><img src="../../img/png/flags/uk.png"> UK</span></div>
+                        class="user_country border_dashboard3 br-5 s-20-s"><img src="{{ asset('img/png/flags/uk.png') }}" alt="Uk flag"> UK</span></div>
                 <div class="mt-8">usertiktokJohnnyFD098</div>
             </div>
         </div>
