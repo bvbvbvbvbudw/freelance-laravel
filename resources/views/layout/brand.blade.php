@@ -91,18 +91,18 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
                     </li>
                     <li>
                         @if(auth()->user()->role_id === 1)
-                            <a href="{{ route('mainPage') }}">Dashboard</a>
+                            <a href="{{ route('mainPage') }}">Dashboaaard</a>
                         @else
-                            <a href="{{ route('brandDashboard') }}">Dashboard</a>
+                            <a href="{{ route('brandDashboard') }}">Dashboaddrd</a>
                         @endif
                     </li>
-{{--                    <li>--}}
-{{--                        <a href="../profile/home.php">Creators I--}}
-{{--                            follow</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="divider">--}}
-{{--                        <a href="../dashboard/edit_profile.php">My account</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li>--}}
+                    {{--                        <a href="../profile/home.php">Creators I--}}
+                    {{--                            follow</a>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li class="divider">--}}
+                    {{--                        <a href="../dashboard/edit_profile.php">My account</a>--}}
+                    {{--                    </li>--}}
 
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"

@@ -39,6 +39,10 @@ class BrandPagesController extends Controller
     {
         return view('brand.page.directory_page');
     }
+    public function commissionsPage()
+    {
+        return view('brand.page.commissions');
+    }
     public function messagesPage()
     {
         return view('brand.page.messages');
