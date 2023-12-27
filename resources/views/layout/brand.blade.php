@@ -1,27 +1,3 @@
-<?php
-
-if(substr_count(url()->current(), '/') === 4) {
-    $page =  urldecode(basename(parse_url(url()->current(), PHP_URL_PATH)));
-} else {
-    $page = 'home';
-}
-$is_current_user = false;
-$hide_edit_block = false;
-if($user && $req_user) {
-    if(isset($user->id) && isset($req_user->id)) {
-        if($user->id === $req_user->id) {
-            $is_current_user = $user;
-            $hide_edit_block = true;
-        } else {
-            $is_current_user = $req_user;
-        }
-    }
-} else  {
-    var_dump("ERROR: USERS NOT FOUND");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en" data-theme="{{ $theme }}">
 
@@ -63,6 +39,7 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
         function themeSelect(checkbox) {
             // Update the hidden input value
             $('#themeForm input[name="theme"]').val(checkbox.checked ? 'dark' : 'light');
+
             // Send an AJAX request to update the theme on the server
             $.ajax({
                 type: 'GET',
@@ -82,13 +59,13 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
             });
         }
     </script>
-    @if($hide_edit_block)
-                <Div class="profile_header_buttons">
-                    <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
-                    <a onclick="createPopup()" class="p_button_2" href="#">Create</a>
-                    <a onclick="sharePopup()" class="p_button_1 p_button_round" href="#"><img class="_icon_medium" src="../img/svg/icons/light/Share Rounded.svg" alt=""></a>
-                </Div>
-    @endif
+    <Div class="profile_header_buttons">
+        <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
+        <a onclick="createPopup()" class="p_button_2" href="#">Create</a>
+        <a onclick="sharePopup()" class="p_button_1 p_button_round" href="#"><img class="_icon_medium"
+                                                                                  src="../img/svg/icons/light/Share Rounded.svg" alt=""></a>
+    </Div>
+
     <div class="sharepage_button-block dropdown dropdown_color2">
         <div class="profile_header-nav-profile  dashboard_header-nav-profile p_profile_header-nav-profile dropbtn">
             <div class="profile_header-nav-profile-button  dashboard_header-nav-profile-button left_panel_open_button">
@@ -104,22 +81,28 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
             <div class="dropdown-content sharepage_dropdown ">
                 <ul class="dropdown-list">
                     <li>
+                        <a href="{{ route('register') }}">Start a page</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('login') }}">Log in</a>
+                    </li>
+                    <li>
                         <a href="{{ route('viewProfilePage', auth()->user()->name) }}">View my page</a>
                     </li>
                     <li>
                         @if(auth()->user()->role_id === 1)
-                            <a href="{{ route('mainPage') }}">Dashboard</a>
+                            <a href="{{ route('mainPage') }}">Dashboaaard</a>
                         @else
-                            <a href="{{ route('brandDashboard') }}">Dashboard</a>
+                            <a href="{{ route('brandDashboard') }}">Dashboaddrd</a>
                         @endif
                     </li>
-{{--                    <li>--}}
-{{--                        <a href="../profile/home.php">Creators I--}}
-{{--                            follow</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="divider">--}}
-{{--                        <a href="../dashboard/edit_profile.php">My account</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li>--}}
+                    {{--                        <a href="../profile/home.php">Creators I--}}
+                    {{--                            follow</a>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li class="divider">--}}
+                    {{--                        <a href="../dashboard/edit_profile.php">My account</a>--}}
+                    {{--                    </li>--}}
 
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -149,14 +132,13 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
                             <img src="../../img/png/avatar3.png" alt="">
                         </div>
                         <div class="profile_user_info-info">
-                            <h2 class="h2">
-                                {{$is_current_user ? $is_current_user->name : null}}</h2>
+                            <h2 class="h2">Alex Jeleazco</h2>
                             <p class="s-24 mt-16">42 supporters</p>
                         </div>
 
                     </div>
                     <div class="profile_user_nav">
-                        <a href="/{{ auth()->user()->name }}" <?php  if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
+                        <a href="/{{ auth()->user()->name }}/" <?php $page = null; if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
                         <a href="/{{ auth()->user()->name }}/views" <?php if ($page == 'views') { ?> class="active" <?php } ?>>Views</a>
                         <a href="/{{ auth()->user()->name }}/extra" <?php if ($page == 'extra') { ?> class="active" <?php } ?>>Extra</a>
                         <a href="/{{ auth()->user()->name }}/membership" <?php if ($page == 'membership') { ?> class="active" <?php } ?>>Membership</a>

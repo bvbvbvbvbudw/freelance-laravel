@@ -14,7 +14,7 @@
                     jobs</a></li>
             <li><a href="{{ route('brandCampaigns') }}"><img
                         src="../img/svg/icons/<?= $theme ?>/icon _lock_.svg">All campaigns</a></li>
-            <li><a href="{{ route('brandCampaigns') }}"><img
+            <li><a href="{{ route('brandCommissions') }}"><img
                         src="../img/svg/icons/<?= $theme ?>/icon _shopping bag_.svg">Commissions</a></li>
 
         </ul>

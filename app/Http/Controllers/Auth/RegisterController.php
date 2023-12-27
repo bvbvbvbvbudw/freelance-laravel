@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -52,14 +53,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//            'role' => ['required', 'integer'],
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8',
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -68,6 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $user = new User;
         $user -> name = $data['name'];
         $user -> email = $data['email'];
@@ -75,8 +75,25 @@ class RegisterController extends Controller
 
         $role = Role::find($data['role']);
         $role -> users()->save($user);
-
         $user->save();
+
+        if($data['role'] == '2'){
+            $brand = new Company;
+            $brand -> user_id = $user -> id;
+            $brand -> name = $data['name'];
+            $brand -> surname = $data['surname'];
+            $brand -> email = $data['email'];
+            $brand -> phone = $data['phone'];
+            $brand -> job_title = $data['jobTitle'];
+            $brand -> job_level = $data['jobLevel'];
+            $brand -> company_name = $data['companyName'];
+            $brand -> business_type = $data['busType'];
+            $brand -> country = $data['country'];
+            $brand -> region = $data['region'];
+            $brand -> budget = $data['budget'];
+            $brand -> where_hear_about = $data['whereHear'];
+            $brand->save();
+        }
 
         return $user;
 

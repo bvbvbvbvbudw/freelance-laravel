@@ -59,7 +59,6 @@ Route::prefix('popups')->group(function(){
 Route::middleware(['auth'])->group(function (){
 
     Route::middleware(['role:1'])->group(function () {
-        // Routes for users with role_id 1
         Route::prefix('app')->group(function () {
             Route::get('/dashboard', [PagesController::class, 'showHomePage'])->name('mainPage');
             Route::get('/donations', [PagesController::class, 'showDonationPage'])->name('viewDonate');
@@ -87,7 +86,6 @@ Route::middleware(['auth'])->group(function (){
     });
 
     Route::middleware(['role:2'])->group(function () {
-        // Routes for users with role_id 2
         Route::prefix('brand')->group(function() {
             Route::get('/dashboard', [BrandPagesController::class, 'dashboardPage'])->name('brandDashboard');
             Route::get('/campaigns', [BrandPagesController::class ,'campaignsPage'])->name('brandCampaigns');
@@ -97,7 +95,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('/my-jobs', [BrandPagesController::class, 'jobDetailsPage'])->name('brandJobDetails');
             Route::get('/explore', [BrandPagesController::class, 'explorePage'])->name('brandExplore');
             Route::get('/messages', [BrandPagesController::class, 'messagesPage'])->name('brandMessage');
-
+            Route::get('/commissions', [BrandPagesController::class, 'commissionsPage'])->name('brandCommissions');
             Route::get('/b&g', [BrandPagesController::class, 'buttonsPage'])->name('brandButtons');
             Route::get('/integrations', [BrandPagesController::class, 'integrationsPage'])->name('brandIntegrations');
             Route::get('/payouts', [BrandPagesController::class, 'payoutsPage'])->name('brandPayouts');
@@ -158,9 +156,7 @@ Route::middleware(['auth'])->group(function (){
 //    Route::get('/{username}/post', [PagesController::class, 'showPostProfilePage'])->name('viewPostProfilePage');
 //    Route::get('/{username}/extra', [PagesController::class, 'showExtraProfilePage'])->name('viewExtraProfilePage');
 //    Route::get('/{username}/edit', [PagesController::class, 'showEditProfilePage'])->name('viewEditProfilePage');
-
-
-
+    
     Route::get('/update-theme', function () {
         $theme = Request::input('theme', 'light');
         Cookie::queue('theme', $theme, 60 * 24 * 365);

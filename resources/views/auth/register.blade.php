@@ -75,7 +75,7 @@
                     <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/X_white.svg" alt=""> Sign up
                         with
                         Twitter</a>
-                    <a class="btn_bordered login_social" onclick="createAccountPopup()">
+                    <a class="btn_bordered login_social" onclick="applyBrandPopup()">
 {{--                        <img class="_icon" src="../img/svg/icons/X_white.svg" alt="">--}}
                         Are you a brand ambassador? Register here
                     </a>
