@@ -8,9 +8,8 @@ $('.left_panel_close_button').on('click', function () {
 });
 function themeSelect(button) {
     let theme = $(button).is(':checked') ? 'dark' : 'light';
-    console.log(theme);
     $('input[name="theme"]').val(theme);
-    setTimeout(() => { $('#themeForm').submit(); }, '300');
+    // setTimeout(() => { $('#themeForm').submit(); }, '300');
 }
 
 

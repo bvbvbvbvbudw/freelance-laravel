@@ -156,9 +156,7 @@ Route::middleware(['auth'])->group(function (){
 //    Route::get('/{username}/post', [PagesController::class, 'showPostProfilePage'])->name('viewPostProfilePage');
 //    Route::get('/{username}/extra', [PagesController::class, 'showExtraProfilePage'])->name('viewExtraProfilePage');
 //    Route::get('/{username}/edit', [PagesController::class, 'showEditProfilePage'])->name('viewEditProfilePage');
-
-
-
+    
     Route::get('/update-theme', function () {
         $theme = Request::input('theme', 'light');
         Cookie::queue('theme', $theme, 60 * 24 * 365);

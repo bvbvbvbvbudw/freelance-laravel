@@ -79,7 +79,7 @@
         </div>
         <div class="login_header-actions">
             <p class="s-14">Don`t have an account?</p>
-            <a class="btn_bordered" href="../profile/sign_up.php">Sign up</a>
+            <a class="btn_bordered" href="{{ route('register') }}">Sign up</a>
         </div>
     </header>
     <main class="profile_main login_main">
@@ -91,7 +91,7 @@
                     <input type="text" class="edit_input" name="email" placeholder="Email">
                 </div>
                     <div class="edit_popup_input_group">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+                        <input class="edit_input" id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
                     </div>
 
                 <label id="email-error" class="error" for="email"></label>

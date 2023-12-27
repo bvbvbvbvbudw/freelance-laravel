@@ -43,10 +43,6 @@
                 url: '/update-theme', // Replace with your actual route for updating the theme
                 data: $('#themeForm').serialize(), // Send the form data
                 success: function(response) {
-                    // Handle the response if needed
-                    console.log('Theme updated successfully');
-
-                    // Reload the page after updating the theme
                     location.reload();
                 },
                 error: function(error) {
@@ -56,6 +52,13 @@
             });
         }
     </script>
+    @if($user)
+        <Div class="profile_header_buttons">
+            <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
+            <a onclick="createPopup()" class="p_button_2" href="#">Create</a>
+            <a onclick="sharePopup()" class="p_button_1 p_button_round" href="#"><img class="_icon_medium" src="../img/svg/icons/light/Share Rounded.svg" alt=""></a>
+        </Div>
+    @endif
     <div class="sharepage_button-block dropdown dropdown_color2">
         <div class="profile_header-nav-profile  dashboard_header-nav-profile p_profile_header-nav-profile dropbtn">
             <div class="profile_header-nav-profile-button  dashboard_header-nav-profile-button left_panel_open_button">
@@ -70,12 +73,12 @@
         <div class="dropdown-content-block dropdown-left ">
             <div class="dropdown-content sharepage_dropdown ">
                 <ul class="dropdown-list">
-                    <li>
-                        <a href="{{ route('register') }}">Start a page</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('login') }}">Log in</a>
-                    </li>
+{{--                    <li>--}}
+{{--                        <a href="{{ route('register') }}">Start a page</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="{{ route('login') }}">Log in</a>--}}
+{{--                    </li>--}}
                     <li>
 {{--                        <a href="/profile/{{ auth()->user()->id }}">View my page</a>--}}
                         <a href="{{ route('viewProfilePage', auth()->user()->name) }}">View my page</a>
@@ -93,8 +96,7 @@
 
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
