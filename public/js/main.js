@@ -58,10 +58,10 @@ function editPopup() {
     openPopup('edit_popup_profile')
 }
 function signInPopup() {
-    openPopup('signin_popup.php')
+    openPopup('singin-popup')
 }
 function createAccountPopup() {
-    openPopup('create_account_popup.php')
+    openPopup('singin-popups')
 }
 function addViewPopup() {
     openPopup('add_view_popup.php')
@@ -74,13 +74,13 @@ function paymentPopup() {
 }
 
 function applyBrandPopup() {
-    openPopup('applybrand_popup.php')
+    openPopup('brand_popup')
 }
 
 function openPopup(file) {
     closePopup();
     $.ajax({
-        url: "/app/" + file,
+        url: "/popups/" + file,
         type: 'GET',
         success: function (data) {
             $('body').append(data);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActiveContracts;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,13 +28,12 @@ class JobsController extends Controller
     public function index()
     {
         $user = Auth::user();
-//        $jobs = $user->jobs()->all();
         $jobs = Job::all();
+        $activeContracts = ActiveContracts::where('freelancer_id', $user->id)->get();
+        return view('dashboard.pages.jobs.jobs', ['user' => $this->current_user, 'req_user' => $this->request_user])->with(['jobs' => $jobs, 'activeContracts' => $activeContracts]);
 
-//        return view('jobs.index')->with('jobs', $jobs);
-//        return 123;
-        return view('dashboard.pages.jobs.jobs', ['user' => $this->current_user, 'req_user' => $this->request_user])->with('jobs', $jobs);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -84,7 +84,7 @@ class JobsController extends Controller
 
         switch ($user->role->name) {
             case 'Freelancer':
-                $threads = $user->threads()->where('job_id', $job->id)->get();
+                $threads = $user->Threads()->where('job_id', $job->id)->get();
                 $userType = 'Freelancer';
                 break;
             case 'Client':

@@ -110,7 +110,7 @@
                 @foreach($posts as $post)
                     <div class="item-post" style="border-bottom: 1px solid black">
                         <h3 class="h2">{{ $post -> title }}</h3>
-                        <img src="{{ $post -> photo_path }}" alt="photo post">
+                        <img src="{{ asset($post -> photo_path) }}" alt="photo post">
                         <p>{{ $post -> description }} | {{ $post->created_at }}</p>
                     </div>
                 @endforeach
