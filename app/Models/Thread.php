@@ -13,7 +13,7 @@ class Thread extends Model
 
     public function Users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
     public function Messages()
     {

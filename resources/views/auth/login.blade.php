@@ -112,6 +112,10 @@
                     <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/X_white.svg" alt=""> Continue
                         with
                         Twitter</a>
+                    <a class="btn_bordered login_social" onclick="signInPopup()">
+                        {{--                        <img class="_icon" src="../img/svg/icons/X_white.svg" alt="">--}}
+                        Are you a brand ambassador? Login here
+                    </a>
                 </div>
         </div>
     </main>
