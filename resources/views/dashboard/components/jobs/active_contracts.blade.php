@@ -1,4 +1,3 @@
-<?php $theme = 'light'?>
 <div class="contracts_block mt-24">
     <div class="contracts_header">
         <h3 class="s-20 semibold">Active Contracts</h3>

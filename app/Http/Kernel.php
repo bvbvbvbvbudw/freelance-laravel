@@ -44,7 +44,10 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
-
+    protected $routeMiddleware = [
+        // ... other middleware entries
+        'role' => \App\Http\Middleware\CheckRoleMiddleware::class,
+    ];
     /**
      * The application's middleware aliases.
      *

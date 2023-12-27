@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandPagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
@@ -29,59 +30,82 @@ Route::get('/', function () {
 Auth::routes();
 
 
+Route::prefix('popups')->group(function(){
+    Route::get('/edit_popup_profile', function (){
+        // auth user id
+        return view('dashboard.components.popups.edit_popup');
+    })->name('editPopup');
 
+    Route::get('/create_popup_profile', function (){
+        // auth user id
+        return view('dashboard.components.popups.create_popup_profile');
+    })->name('createPopup');
+
+    Route::get('/share_popup_profile', function (){
+        // auth user id
+        return view('dashboard.components.popups.share_popup_profile');
+    })->name('sharePopup');
+    Route::get('/singin-popup', function(){
+        return view('auth.sigin_popup');
+    });
+    Route::get('/singin-popups', function(){
+        return view('auth.create_account_popup');
+    });
+    Route::get('/brand_popup', function(){
+        return view('dashboard.components.popups.brand_popup');
+    });
+});
 
 Route::middleware(['auth'])->group(function (){
-    Route::prefix('app')->group(function () {
-        // login and registration
-        Route::get('/dashboard', [PagesController::class, 'showHomePage'])->name('mainPage');
-//        Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
-        Route::get('/donations', [PagesController::class, 'showDonationPage'])->name('viewDonate');
-        Route::get('/membership', [PagesController::class, 'showMembershipPage'])->name('viewMembershipPage');
-        Route::get('/membership/enable', [PagesController::class, 'showEnableMembershipPage'])->name('viewEnableMembership');
+    Route::middleware(['role:1'])->group(function () {
+        // Routes for users with role_id 1
+        Route::prefix('app')->group(function () {
+            Route::get('/dashboard', [PagesController::class, 'showHomePage'])->name('mainPage');
+            Route::get('/donations', [PagesController::class, 'showDonationPage'])->name('viewDonate');
+            Route::get('/membership', [PagesController::class, 'showMembershipPage'])->name('viewMembershipPage');
+            Route::get('/membership/enable', [PagesController::class, 'showEnableMembershipPage'])->name('viewEnableMembership');
+            Route::get('/extras', [PagesController::class, 'showExtrasPage'])->name('viewExtrasPage');
+            Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
+            Route::get('/messages', [PagesController::class, 'showMessagesPage'])->name('viewMessagePage');
+            Route::resource('/jobs', JobsController::class)->names('viewJobsPage');
+            Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
+            Route::get('/integrations', [PagesController::class, 'showIntegrationsPage'])->name('viewIntegrationsPage');
+            Route::get('/payouts', [PagesController::class, 'showPayoutsPage'])->name('viewPayoutsPage');
+            Route::get('/settings', [PagesController::class, 'showSettingsPage'])->name('viewSettingsPage');
+            Route::get('/view', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
+            Route::get('/buttons', [PagesController::class, 'showButtonsPage'])->name('viewButtonsPage');
+            Route::get('/post', [PagesController::class, 'showPostsPage'])->name('viewPostsPage');
+            Route::get('/post/new', [PagesController::class, 'showPostsCreatePage'])->name('viewPostsCreatePage');
+            Route::get('/post/audio/new', [PagesController::class, 'showPostsAudioCreatePage'])->name('viewPostsAudioCreatePage');
+            Route::get('/post/album/new', [PagesController::class, 'showPostsAlbumCreatePage'])->name('viewPostsAlbumCreatePage');
+            Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
+            Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');
+            Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
+        });
 
-        Route::get('/extras', [PagesController::class, 'showExtrasPage'])->name('viewExtrasPage');
-        Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
-        Route::get('/messages', [PagesController::class, 'showMessagesPage'])->name('viewMessagePage');
-
-        Route::resource('/jobs', JobsController::class)->names('viewJobsPage');
-//        Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
-
-        Route::get('/integrations', [PagesController::class, 'showIntegrationsPage'])->name('viewIntegrationsPage');
-        Route::get('/payouts', [PagesController::class, 'showPayoutsPage'])->name('viewPayoutsPage');
-        Route::get('/settings', [PagesController::class, 'showSettingsPage'])->name('viewSettingsPage');
-
-        Route::get('/view/publish', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
-        Route::get('/buttons', [PagesController::class, 'showButtonsPage'])->name('viewButtonsPage');
-
-        Route::get('/post', [PagesController::class, 'showPostsPage'])->name('viewPostsPage');
-
-        Route::get('/post/new', [PagesController::class, 'showPostsCreatePage'])->name('viewPostsCreatePage');
-        Route::get('/post/audio/new', [PagesController::class, 'showPostsAudioCreatePage'])->name('viewPostsAudioCreatePage');
-        Route::get('/post/album/new', [PagesController::class, 'showPostsAlbumCreatePage'])->name('viewPostsAlbumCreatePage');
-        Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
-
-//        Route::get('/integrations', [PagesController::class, 'showIntegrationsPage'])->name('viewIntegrationsPage');
-
-        Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');
-        Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
-
-        Route::get('/edit_popup_profile', function (){
-            // auth user id
-            return view('dashboard.components.popups.edit_popup');
-        })->name('editPopup');
-
-        Route::get('/create_popup_profile', function (){
-            // auth user id
-            return view('dashboard.components.popups.create_popup_profile');
-        })->name('createPopup');
-
-        Route::get('/share_popup_profile', function (){
-            // auth user id
-            return view('dashboard.components.popups.share_popup_profile');
-        })->name('sharePopup');
     });
+
+    Route::middleware(['role:2'])->group(function () {
+        // Routes for users with role_id 2
+        Route::prefix('brand')->group(function() {
+            Route::get('/dashboard', [BrandPagesController::class, 'dashboardPage'])->name('brandDashboard');
+            Route::get('/campaigns', [BrandPagesController::class ,'campaignsPage'])->name('brandCampaigns');
+            Route::get('/contract-statistics', [BrandPagesController::class, 'campaignsContractPage'])->name('brandContractStatistic');
+            Route::get('/job/new', [BrandPagesController::class, 'newJobPage'])->name('brandJob');
+            Route::get('/jobs', [BrandPagesController::class, 'myJobsPage'])->name('brandMyJob');
+            Route::get('/my-jobs', [BrandPagesController::class, 'jobDetailsPage'])->name('brandJobDetails');
+            Route::get('/explore', [BrandPagesController::class, 'explorePage'])->name('brandExplore');
+            Route::get('/messages', [BrandPagesController::class, 'messagesPage'])->name('brandMessage');
+
+            Route::get('/b&g', [BrandPagesController::class, 'buttonsPage'])->name('brandButtons');
+            Route::get('/integrations', [BrandPagesController::class, 'integrationsPage'])->name('brandIntegrations');
+            Route::get('/payouts', [BrandPagesController::class, 'payoutsPage'])->name('brandPayouts');
+            Route::get('/settings', [BrandPagesController::class, 'settingsPage'])->name('brandSettings');
+        });
+
+    });
+
 
     Route::get('/{username}', [PagesController::class, 'showViewPage'])->name('viewProfilePage');;
     Route::get('/{username}/views', [PagesController::class, 'showViewProfilePage'])->name('viewViewProfilePage');
@@ -90,16 +114,8 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/{username}/extra', [PagesController::class, 'showExtraProfilePage'])->name('viewExtraProfilePage');
     Route::get('/{username}/edit', [PagesController::class, 'showEditProfilePage'])->name('viewEditProfilePage');
 
-
-
-
-//    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
-
-//    Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
-
     Route::post('/favorite', [FavoriteController::class, 'addFavorite'])->name('addFavorite');
     Route::post('/threads', [ThreadController::class, 'createThread'])->name('createThread');
-//Route::post('/create-message/{thread}', [ThreadController::class, 'createMessage'])->name('createMessage');
     Route::get('/threads/{id}', [ThreadController::class, 'showThreads']);
     Route::post('/threads/{id}/newmessage', [ThreadController::class, 'createMessage'])->name('createMessage');
 
@@ -115,6 +131,9 @@ Route::middleware(['auth'])->group(function (){
 //    Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
 //
 //
+//    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+//    Route::get('/jobs/{id}', [JobsController::class, 'show'])->name('show');
+//Route::post('/create-message/{thread}', [ThreadController::class, 'createMessage'])->name('createMessage');
 //
 //
 //    Route::get('/view/publish', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
