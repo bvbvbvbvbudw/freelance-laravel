@@ -148,9 +148,7 @@ class PagesController extends Controller
     }
     public function showPostProfilePage($username)
     {
-        $userid = User::where('name', $username)->first();
-        $posts = Post::where('user_id', $userid->id)->get();
-        return view('dashboard.pages.profile.post',['user' => $this->current_user, 'req_user' => $this->request_user] )->with('posts', $posts);
+        return view('dashboard.pages.profile.post',['user' => $this->current_user, 'req_user' => $this->request_user] );
     }
     public function showEditProfilePage()
     {

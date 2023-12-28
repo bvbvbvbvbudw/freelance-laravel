@@ -2382,11 +2382,20 @@ label {
 .p_post_2>*:not(:nth-child(1)) {
   margin-top: 24px;
 }
-
+.p_post_header {
+    display: flex;
+    justify-content: space-between;
+}
 .p_post_header>*:not(:nth-child(1)) {
   margin-top: 24px;
 }
-
+.icon-big {
+    display: block;
+    margin: 0 auto;
+}
+.text-center {
+    text-align: center;
+}
 .p_post_block {
   margin: 0 auto;
   width: 1200px;
