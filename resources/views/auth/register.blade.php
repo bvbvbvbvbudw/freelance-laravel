@@ -14,6 +14,16 @@
                 <h2 class="h3">Sign up</h2>
                 <form class='login_form' method="POST" action="{{ route('register') }}">
                     @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="row mb-3">
                         <div class="col-md-6 edit_popup_input_group">
                             <input id="name" type="text" class="edit_input form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name" required autocomplete="name" autofocus>

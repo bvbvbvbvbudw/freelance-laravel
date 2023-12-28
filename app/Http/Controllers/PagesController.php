@@ -52,6 +52,10 @@ class PagesController extends Controller
     {
         return view('dashboard.pages.monetize.extras',['user' => $this->current_user, 'req_user' => $this->request_user]);
     }
+    public function showFeedPage()
+    {
+        return view('dashboard.pages.monetize.feed',['user' => $this->current_user, 'req_user' => $this->request_user]);
+    }
     public function showCommissionsPage()
     {
         return view('dashboard.pages.monetize.commissions',['user' => $this->current_user, 'req_user' => $this->request_user]);

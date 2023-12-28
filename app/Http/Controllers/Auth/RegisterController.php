@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
 {
@@ -48,17 +49,26 @@ class RegisterController extends Controller
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
+     * @throws \Illuminate\Validation\ValidationException
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $validator = Validator::make($data, [
             'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
+            'surname' => 'string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8',
+            'password_confirmation' => 'same:password'
         ]);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
+        return $validator;
     }
+
     /**
      * Create a new user instance after a valid registration.
      *

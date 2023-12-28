@@ -14,7 +14,7 @@
                     </div>
                     <div>
                         <h2 class="h2">Hi, {{ $user -> name }}!</h2>
-                        <p> {{isset($user -> info -> username_link) ? asset(($user -> info -> username_link)) : asset('img/png/avatar.png')}}</p>
+                        <p> {{ isset($user -> info -> username_link) ? $user -> info -> username_link : null }}</p>
                     </div>
                 </div>
                 <div class="dashboard_user_block-profile-share">

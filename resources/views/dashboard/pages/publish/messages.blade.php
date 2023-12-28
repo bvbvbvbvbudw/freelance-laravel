@@ -15,10 +15,10 @@
                             <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/add_24px3.svg') }}" alt="icon">
                         </button>
                         <button class="button_noappearance">
-                            <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon settings_3.svg') }}" alt="icon">
+                            <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px3.svg') }}" alt="icon">
                         </button>
                         <button class="button_noappearance">
-                            <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon settings_3.svg') }}" alt="icon">
+                            <img class=" _icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon _settings_3.svg') }}" alt="icon">
                         </button>
                     </div>
                 </div>

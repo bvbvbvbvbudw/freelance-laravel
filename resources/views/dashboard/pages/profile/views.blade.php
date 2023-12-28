@@ -19,7 +19,6 @@
 
         <div class="profile_block profile_border1 br-20 p_info_block">
             <div class="p_info_block_container">
-{{--                <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">--}}
                 <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}" alt="icon">
                 @if($not_hide_edit_block)
                     <h2 class="h2">You haven't added views yet, upload a new view or add your social feeds</h2>

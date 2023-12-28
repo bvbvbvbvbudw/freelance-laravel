@@ -16,14 +16,7 @@ $('.left_panel_close_button').on('click', function () {
 
 
 function offerPopup() {
-    $.ajax({
-        url: "/app/dashboard/offer_popup.php",
-        type: 'GET',
-        success: function (data) {
-            $('body').append(data);
-
-        }
-    });
+    openPopup('offer_job')
 }
 
 function closePopup() {
@@ -64,7 +57,7 @@ function createAccountPopup() {
     openPopup('singin-popups')
 }
 function addViewPopup() {
-    openPopup('add_view_popup.php')
+    openPopup('add_view')
 }
 function authorizePopup() {
     openPopup('social_authorize_popup.php')
