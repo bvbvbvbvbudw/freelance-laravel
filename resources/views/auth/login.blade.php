@@ -107,8 +107,8 @@
                     <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/facebook.svg')}}" alt="icon"> Continue
                         with
                         Facebook</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/apple.svg')}}" alt="icon"> Continue with
-                        Apple</a>
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/tiktok.svg')}}" alt="icon"> Continue with
+                        TikTok</a>
                     <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/X_white.svg')}}" alt="icon"> Continue
                         with
                         Twitter</a>

@@ -6,12 +6,12 @@ if(substr_count(url()->current(), '/') === 4) {
     $page = 'home';
 }
 $is_current_user = false;
-$hide_edit_block = false;
+$not_hide_edit_block = false;
 if($user && $req_user) {
     if(isset($user->id) && isset($req_user->id)) {
         if($user->id === $req_user->id) {
             $is_current_user = $user;
-            $hide_edit_block = true;
+            $not_hide_edit_block = true;
         } else {
             $is_current_user = $req_user;
         }
@@ -82,7 +82,7 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
             });
         }
     </script>
-    @if($hide_edit_block)
+    @if($not_hide_edit_block)
                 <Div class="profile_header_buttons">
                     <a onclick="editPopup()" class="p_button_1" href="#">Edit</a>
                     <a onclick="createPopup()" class="p_button_2" href="#">Create</a>
@@ -157,11 +157,11 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
 
                     </div>
                     <div class="profile_user_nav">
-                        <a href="/{{ auth()->user()->name }}" <?php  if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
-                        <a href="/{{ auth()->user()->name }}/views" <?php if ($page == 'views') { ?> class="active" <?php } ?>>Views</a>
-                        <a href="/{{ auth()->user()->name }}/extra" <?php if ($page == 'extra') { ?> class="active" <?php } ?>>Extra</a>
-                        <a href="/{{ auth()->user()->name }}/membership" <?php if ($page == 'membership') { ?> class="active" <?php } ?>>Membership</a>
-                        <a href="/{{ auth()->user()->name }}/post" <?php if ($page == 'post') { ?> class="active" <?php } ?>>Post</a>
+                        <a href="/{{$is_current_user ? $is_current_user->name : null}}" <?php  if ($page == 'home') { ?> class="active" <?php } ?>>Home</a>
+                        <a href="/{{$is_current_user ? $is_current_user->name : null}}/views" <?php if ($page == 'views') { ?> class="active" <?php } ?>>Views</a>
+                        <a href="/{{$is_current_user ? $is_current_user->name : null}}/extra" <?php if ($page == 'extra') { ?> class="active" <?php } ?>>Extra</a>
+                        <a href="/{{$is_current_user ? $is_current_user->name : null}}/membership" <?php if ($page == 'membership') { ?> class="active" <?php } ?>>Membership</a>
+                        <a href="/{{$is_current_user ? $is_current_user->name : null}}/post" <?php if ($page == 'post') { ?> class="active" <?php } ?>>Post</a>
                     </div>
                 </div>
             </div>

@@ -85,4 +85,20 @@ function openPopup(file) {
         }
     });
 }
+function paymentPopup1(e) {
+    e.preventDefault(); // Відміна типової поведінки кнопки
+
+    var formData = $('#supportForm').serialize();
+    $.ajax({
+        url: $('#supportForm').attr('action'),
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            $('body').append(data);
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
 
