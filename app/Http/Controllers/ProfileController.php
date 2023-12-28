@@ -13,11 +13,16 @@ class ProfileController extends Controller
 {
     public function editProfile(Request $request)
     {
+        $avatar = false;
+        if ($request->hasFile('avatar')) {
+                $avatar = $request->file('avatar')->store('uploads/avatars', 'public_test');
+        }
         $user = Auth::user();
         $user_info = $user->info;
         $user->name = isset($request->username) ? $request->username : "";
         $user->save();
         $user_info->description = isset($request->description) ? $request->description : "";
+        $user_info->avatar = isset($avatar) ? $avatar : "";
         $user_info->creating = isset($request->creating) ? $request->creating : "";
         $user_info->yt_link = isset($request->yt_link) ? $request->yt_link : "";
         $user_info->website = isset($request->website) ? $request->website : "";

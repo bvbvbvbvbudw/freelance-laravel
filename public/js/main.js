@@ -69,9 +69,7 @@ function addViewPopup() {
 function authorizePopup() {
     openPopup('social_authorize_popup.php')
 }
-function paymentPopup() {
-    openPopup('payment_popup.php')
-}
+
 
 function applyBrandPopup() {
     openPopup('brand_popup')
@@ -87,3 +85,4 @@ function openPopup(file) {
         }
     });
 }
+

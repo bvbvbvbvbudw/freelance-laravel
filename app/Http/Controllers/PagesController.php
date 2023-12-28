@@ -71,6 +71,7 @@ class PagesController extends Controller
 
     public function storePost(Request $request)
     {
+        $filePath = false;
         $request->validate([
             'title' => 'required|string',
             'description' => 'nullable|string',
@@ -91,7 +92,7 @@ class PagesController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'permission' => $request->permission_post,
-            'photo_path' => $filePath,
+            'photo_path' => $filePath ? $filePath : null,
             'status_post' => $request->statuses_post,
             'user_id' => Auth::user()->id,
         ]);

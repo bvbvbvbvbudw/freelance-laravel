@@ -146,7 +146,8 @@ https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.j
                 <div class="profile_user_info_ ">
                     <div class="profile_user_info ">
                         <div>
-                            <img src="../../img/png/avatar3.png" alt="">
+                            <img src="{{isset($is_current_user->info->avatar) ? asset($is_current_user->info->avatar) : "../../img/png/avatar3.png"  }}" alt="">
+{{--                            <img src="../../img/png/avatar3.png" alt="">--}}
                         </div>
                         <div class="profile_user_info-info">
                             <h2 class="h2">
