@@ -9,7 +9,7 @@
                 <div class="brand_statistic_header_filter">
                     <div class=" dropdown">
                         <div class="dropbtn light_border">
-                            <img class="_icon" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                            <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                             Last 30 days
                         </div>
                         <div class="dropdown-content-block drodown-right">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="dropdown">
                         <div class="dropbtn light_border">
-                            <img class="_icon" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                            <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                             By platform
                         </div>
                         <div class="dropdown-content-block dropdown-left">
@@ -59,20 +59,19 @@
                     <div class="creator ">
                         <div>
                             <div class="recent_avatar">
-                                <img src="../img/png/avatar2.png" alt="">
+                                <img src="{{ asset('img/png/avatar2.png') }}" alt="icon">
                             </div>
                             <div class="creator_info">
                                 <div>
                                     <span>Johnny FD</span>
-                                    <span class="user_country border_dashboard3 br-5 s-20-s"><img src="../img/png/flags/uk.png">
-                      UK</span>
+                                    <span class="user_country border_dashboard3 br-5 s-20-s"><img src="{{ asset('img/png/flags/uk.png') }}" alt="flag UK">UK</span>
                                 </div>
                                 <div class="creator_social">
                                     <a href="">
-                                        <img src="../img/svg/icons/tiktok.svg" alt="">
+                                        <img src="{{ asset('img/svg/icons/tiktok.svg') }}" alt="icon">
                                     </a>
                                     <a href="">
-                                        <img src="../img/svg/icons/youtube.svg" alt="">
+                                        <img src="{{ asset('img/svg/icons/youtube.svg') }}" alt="icon">
                                     </a>
                                 </div>
                             </div>
@@ -81,7 +80,7 @@
                         <div class="s-20-s">Amount <span class="s-20-s text-active">400$</span></div>
                         <div class="creator_actions">
                             <a href="" class="button button_2 button-br_md">View contract</a>
-                            <a href="../dashboard/brands_statistics_contract.php"
+                            <a href="{{route('brandContractStatistic')}}"
                                class="button button_1 button-br_md main_color_important">Statistic</a>
 
                         </div>
@@ -94,7 +93,7 @@
                             <div class="statistic_val">2,345</div>
                             <div class="statisctic_increase">
                                 <span>+345 (+ 5 %) </span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                         <div class="earnings_col">
@@ -102,7 +101,7 @@
                             <div class="statistic_val">350,090</div>
                             <div class="statisctic_increase">
                                 <span>+1,900 (+ 5 %)</span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                         <div class="earnings_col">
@@ -110,7 +109,7 @@
                             <div class="statistic_val">2,345</div>
                             <div class="statisctic_increase">
                                 <span>+345 </span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                         <div class="earnings_col">
@@ -118,7 +117,7 @@
                             <div class="statistic_val">2,345</div>
                             <div class="statisctic_increase">
                                 <span>+345 (+ 5 %) </span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                         <div class="earnings_col">
@@ -126,7 +125,7 @@
                             <div class="statistic_val">550</div>
                             <div class="statisctic_increase">
                                 <span>+50 (+ 5 %) </span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                         <div class="earnings_col">
@@ -134,7 +133,7 @@
                             <div class="statistic_val">1550</div>
                             <div class="statisctic_increase">
                                 <span>+150 (+ 10 %) </span>
-                                <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                                <img src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                             </div>
                         </div>
                     </div>
@@ -145,6 +144,6 @@
         </div>
     </div>
 </main>
-<script src="../js/date-picker.js"></script>
+<script src="{{ asset('js/date-picker.js') }}"></script>
 @include('brand.components.footer')
 @endsection

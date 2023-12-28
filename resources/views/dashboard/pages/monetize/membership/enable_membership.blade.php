@@ -1,9 +1,8 @@
-<?php $theme = 'light '?>
 @extends('dashboard.app')
 @section('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../freelance/resources/css/dropzone.css" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}" type="text/css" />
     <main class="dashboard_main">
         @include('dashboard.components.columns.left_column')
         <div class="content">
@@ -43,7 +42,7 @@
                         <div>
                             <div id="dropzone-container" class="dropzone dropzone_green dropzone_sm br-10 mt-16">
                                 <div class="dz-default dz-message">
-                                    <div><img style="height:40px" src="../img/svg/icons/<?= $theme ?>/ic_filter_48px2.svg"></div>
+                                    <div><img style="height:40px" src="{{ asset('img/svg/icons/'. $theme . '/ic_filter_48px2.svg') }}" alt="icon"></div>
                                     <h2 class="mt-16">Upload image or <span>drag and drop</span></h2>
                                 </div>
                             </div>
@@ -71,7 +70,7 @@
                             <div class="input_group_text">
                                 <div class=" dropdown">
                                     <div class="dropbtn dropbtn-image transparent">
-                                        <img class="_icon" src="../img/svg/icons/light/ic_more_horiz_48px.svg">
+                                        <img class="_icon" src="{{ asset('img/svg/icons/light/ic_more_horiz_48px.svg') }}" alt="icon">
                                     </div>
                                     <div class="dropdown-content-block dropdown-left">
                                         <div class="dropdown-content sharepage_dropdown ">
@@ -94,7 +93,7 @@
                             <div class="input_group_text">
                                 <div class=" dropdown">
                                     <div class="dropbtn dropbtn-image transparent">
-                                        <img class="_icon" src="../img/svg/icons/light/ic_more_horiz_48px.svg">
+                                        <img class="_icon" src="{{ asset('img/svg/icons/light/ic_more_horiz_48px.svg') }}" alt="icon">
                                     </div>
                                     <div class="dropdown-content-block dropdown-left">
                                         <div class="dropdown-content sharepage_dropdown ">

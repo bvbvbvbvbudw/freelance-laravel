@@ -26,7 +26,7 @@
 
         <div class="border_dashboard3 input_group">
       <span class="input_grop_text"><img class="_icon"
-                                         src="../img/svg/icons/<?= $theme ?>/ic_search_48px3.svg"></span>
+                                         src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px3.svg') }}" alt="icon"></span>
             <input class="input-transparent input_group_control" placeholder="Search contracts">
         </div>
     </div>

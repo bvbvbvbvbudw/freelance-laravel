@@ -340,10 +340,16 @@
   display: flex;
   justify-content: space-between;
 }
+.dashboard_post_image_container {
+    width: 40%;
+}
+.dashboard_post_image_container img {
+    border-radius: 20px;
+}
 
 .dashboard_post_text {
-  font-size: 20px;
-  font-family: "Outfit-SemiBold";
+  font-size: 16px;
+  font-family: "Outfit-Regular";
   padding-bottom: 16px;
   border-bottom: solid 1px var(--text-main-color);
 }

@@ -3,6 +3,7 @@
     <div class="contract contract_2 border_dashboard3 br-10 mt-24">
         <div class="contract_desc">
             <div>
+                <img src="{{ asset('img/png/contract.png') }}" alt="icon">
                 <img src="../../img/png/contract.png">
             </div>
             <div>

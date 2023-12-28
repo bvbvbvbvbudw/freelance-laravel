@@ -4,11 +4,11 @@
         <h2 class="h2 dashboard_updates_header">Recent transactions</h2>
         <div class="recents_actions">
             <div class="light_border">
-                <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/ic_search_48px.svg">
+                <img class="_icon_medium" src="{{ asset('img/svg/icons/light/ic_search_48px.svg') }}" alt="icon">
                 <input class="input-transparent" type="text" placeholder="Search by name or email">
             </div>
             <div class="light_border">
-                <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/ic_file_download_48px.svg">
+                <img class="_icon_medium" src="{{ asset('img/svg/icons/light/ic_file_download_48px.svg') }}" alt="icon">
                 .CSV
             </div>
 
@@ -17,8 +17,9 @@
     <div class="recent_list">
         <div class="recent border_dashboard2 br-10">
             <div class="recent_avatar">
-                <img src="../img/png/avatar2.png" alt="">
-                <div class="recent_avatar_like"><img src="../img/svg/icons/light/icon _favorite_colored.svg" alt=""></div>
+                <img src={{ asset('img/png/avatar2.png') }}  alt="icon">
+                <img src={{ asset('img/png/avatar2.png') }}  alt="icon">
+                <div class="recent_avatar_like"><img src="{{ asset('img/svg/icons/light/icon _favorite_colored.svg') }}" alt="icon"></div>
             </div>
             <div style="padding-left:10px">
                 <div class="semibold">Eva Philip</div>
@@ -48,8 +49,8 @@
         </div>
         <div class="recent border_dashboard2 br-10">
             <div class="recent_avatar">
-                <img src="../img/png/avatar2.png" alt="">
-                <div class="recent_avatar_like"><img src="../img/svg/icons/light/icon _favorite_colored.svg" alt=""></div>
+                <img src={{ asset('img/png/avatar2.png') }}  alt="icon">
+                <div class="recent_avatar_like"><img src="{{ asset('img/svg/icons/light/icon _favorite_colored.svg') }}"  alt="icon"></div>
             </div>
             <div style="padding-left:10px">
                 <div class="semibold">Eva Philip</div>
@@ -79,8 +80,8 @@
         </div>
         <div class="recent border_dashboard2 br-10">
             <div class="recent_avatar">
-                <img src="../img/png/avatar2.png" alt="">
-                <div class="recent_avatar_like"><img src="../img/svg/icons/light/icon _favorite_colored.svg" alt=""></div>
+                <img src={{ asset('img/png/avatar2.png') }}  alt="icon">
+                <div class="recent_avatar_like"><img src="{{ asset('img/svg/icons/light/icon _favorite_colored.svg') }}"  alt="icon"></div>
             </div>
             <div style="padding-left:10px">
                 <div class="semibold">Eva Philip</div>

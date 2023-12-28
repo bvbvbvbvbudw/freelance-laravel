@@ -3,7 +3,7 @@
         <div class="contract border_dashboard br-10 mt-24 border_dashboard3">
             <div class="contract_desc">
                 <div>
-                    <img src="../../img/png/contract.png">
+                    <img src="{{ asset('img/png/contract.png') }}" alt="icon">
                 </div>
                 <div>
                     <h3 class="s-20 semibold">{{$item->user->name}}

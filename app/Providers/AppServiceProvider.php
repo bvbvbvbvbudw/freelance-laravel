@@ -53,7 +53,8 @@ class AppServiceProvider extends ServiceProvider
 
                 // Update the $theme variable to reflect the change immediately
                 $theme = Cookie::get('theme');
-                $view->with('theme', $theme);
+                $theme_reverse = $theme === 'light' ? 'dark' : 'light';
+                $view->with(['theme' => $theme, 'theme_reverse' => $theme_reverse]);
             }
         });
     }

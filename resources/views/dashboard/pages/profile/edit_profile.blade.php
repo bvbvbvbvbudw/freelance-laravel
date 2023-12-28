@@ -17,7 +17,7 @@
                         <p class="s-24 semibold">Personal Info</p>
                         <form>
                             <label class="editprofile_preview_block mt-32">
-                                <img class="preview_image" src="../img/png/avatar.png" alt="">
+                                <img class="preview_image" src="{{ asset('img/png/avatar.png') }}" alt="avatar">
                                 <input type="file" style="display:none" onchange="loadFile(event)">
                             </label>
                             <div class="input_block">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="navs_block" id="followers_block">
                     <div class="dashboard_info_block mt-16 bg_four border_dashboard">
-                        <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}" alt="icon">
                         <h2 class="h2">You don't have any followers yet</h2>
                         <p>Share your page with your audience to get started.</p>
                     </div>
@@ -81,7 +81,7 @@
                     <div class="following_list">
                         <div class="follower">
                             <div>
-                                <div class="follower_image"><img src="../img/png/avatar.png" alt=""></div>
+                                <img class="preview_image" src="{{ asset('img/png/avatar.png') }}" alt="avatar">
                                 <div class="follower_info">
                                     <div class="semibold">My Trip View</div>
                                     <div class="light_grey">Following since Oct 2023</div>
@@ -94,9 +94,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </main>
     <script>

@@ -42,7 +42,7 @@
             <div class="flex flex-between login_small_text align-center">
                 <p class="s-10">Do you already have account? </p>
                 <p onclick="signInPopup()" class="flex align-center singin_text">Sign in <img style="margin-left:10px"
-                                                                                              class="_icon" src="../img/svg/icons/popup/<?= $theme ?>/ic_keyboard_arrow_down_48px.svg" alt=""></p>
+                                                                                              class="_icon" src="{{asset('img/svg/icons/popup' . $theme . '/ic_keyboard_arrow_down_48px.svg')}}" alt="icon"></p>
             </div>
 
 

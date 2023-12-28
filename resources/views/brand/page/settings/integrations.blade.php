@@ -11,7 +11,7 @@
                 <div class="integration_social_list mt-24">
                     <div class="integration_social border_dashboard br-10 border_dashboard3">
                         <div class="integration_social_img">
-                            <img src="../img/png/instagram.png" alt="">
+                            <img src="{{ asset('img/png/instagram.png') }}" alt="icon">
                         </div>
                         <div class="integration_social_text">
                             <p class="s-20 medium">Instagram Shout-outs</p>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="integration_social border_dashboard br-10 border_dashboard3">
                         <div class="integration_social_img">
-                            <img src="../img/png/youtube.png" alt="">
+                            <img src="{{ asset('img/png/youtube.png') }}" alt="icon">
                         </div>
                         <div class="integration_social_text">
                             <p class="s-20 medium">YouTube</p>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="integration_social border_dashboard br-10 border_dashboard3">
                         <div class="integration_social_img">
-                            <img src="../img/png/tiktok.png" alt="">
+                            <img src="{{ asset('img/png/tiktok.png') }}" alt="icon">
                         </div>
                         <div class="integration_social_text">
                             <p class="s-20 medium">TikTok</p>

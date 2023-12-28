@@ -46,7 +46,7 @@
                     }
                 </style>
                 <div class="extra_list">
-                    <a data-target="scratch" href="../dashboard/extra/scracth.php" class="extra extra_new">
+                    <a data-target="scratch" href='' class="extra extra_new">
                         Start from scracth
                     </a>
                     <div class="scratch modal-extra">
@@ -55,8 +55,8 @@
                         </div>
                         @include('dashboard.pages.extras.scratch')
                     </div>
-                    <a data-target="tour" href="../dashboard/extra/tour.php" class="extra">
-                        <img class="_icon-big" src="../img/svg/icons/light/ic_palette_48px.svg">
+                    <a data-target="tour" href='' class="extra">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_palette_48px.svg') }}" alt="icon">
                         Virtual Tour
                     </a>
                     <div class="tour modal-extra">
@@ -65,8 +65,8 @@
                         </div>
                         @include('dashboard.pages.extras.tour')
                     </div>
-                    <a data-target="youtube" href="../dashboard/extra/youtube.php" class="extra">
-                        <img class="_icon-big" src="../img/svg/icons/light/ic_camera_enhance_24px.svg">
+                    <a data-target="youtube" href='' class="extra">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_camera_enhance_24px.svg') }}" alt="icon">
                         Youtube channel memberships
                     </a>
                     <div class="youtube modal-extra">
@@ -75,8 +75,8 @@
                         </div>
                         @include('dashboard.pages.extras.youtube')
                     </div>
-                    <a data-target="live" href="../dashboard/extra/live.php" class="extra">
-                        <img class="_icon-big" src="../img/svg/icons/light/ic_videocam_48px.svg">
+                    <a data-target="live" href='' class="extra">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_videocam_48px.svg') }}" alt="icon">
                         Live Event Ticket
                     </a>
                     <div class="live modal-extra">
@@ -85,8 +85,8 @@
                         </div>
                         @include('dashboard.pages.extras.live')
                     </div>
-                    <a data-target="digital" href="../dashboard/extra/digital.php" class="extra">
-                        <img class="_icon-big" src="../img/svg/icons/light/ic_import_contacts_48px.svg">
+                    <a data-target="digital" href='' class="extra">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_import_contacts_48px.svg') }}" alt="icon">
                         Digital Download
                     </a>
                     <div class="digital modal-extra">
@@ -95,8 +95,8 @@
                         </div>
                         @include('dashboard.pages.extras.digital')
                     </div>
-                    <a data-target="instagram" href="../dashboard/extra/instagram.php" class="extra">
-                        <img class="_icon-big" src="../img/svg/icons/light/ic_vpn_key_48px.svg">
+                    <a data-target="instagram" href='' class="extra">
+                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_vpn_key_48px.svg') }}" alt="icon">
                         Join Instagram Close Friends
                     </a>
                     <div class="instagram modal-extra">

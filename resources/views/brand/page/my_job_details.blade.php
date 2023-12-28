@@ -2,7 +2,7 @@
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" type="text/css" />
-<link rel="stylesheet" href="../../freelance/resources/css/dropzone.css" type="text/css" />
+<link rel="stylesheet" href="{{ asset('css/dropzone.css') }}" type="text/css" />
 <main class="dashboard_main">
     @include('brand.components.columns.brands_left_column')
     <div class="content">
@@ -36,7 +36,7 @@
                 <h3 class="s-20-s">Active contracts</h3>
                 <div class="border_dashboard3 input_group">
           <span class="input_grop_text"><img class="_icon"
-                                             src="../img/svg/icons/<?= $theme ?>/ic_search_48px.svg"></span>
+                                             src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px.svg') }}" alt="icon"></span>
                     <input class="input-transparent input_group_control" placeholder="Search contracts">
                 </div>
             </div>
@@ -157,7 +157,7 @@
         </div>
     </div>
 </main>
-<script src="../js/inputs.js"></script>
+<script src="{{ asset('js/inputs.js') }}"></script>
 <script>
     Dropzone.autoDiscover = false;
 
