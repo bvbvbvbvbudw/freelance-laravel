@@ -102,14 +102,14 @@
                     <div class="s-12">or login with</div>
                 </div>
                 <div class="login_social_list">
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/google.svg" alt=""> Continue
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/google.svg')}}" alt="icon"> Continue
                         with Google</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/facebook.svg" alt=""> Continue
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/facebook.svg')}}" alt="icon"> Continue
                         with
                         Facebook</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/apple.svg" alt=""> Continue with
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/apple.svg')}}" alt="icon"> Continue with
                         Apple</a>
-                    <a class="btn_bordered login_social"><img class="_icon" src="../img/svg/icons/X_white.svg" alt=""> Continue
+                    <a class="btn_bordered login_social"><img class="_icon" src="{{asset('img/svg/icons/X_white.svg')}}" alt="icon"> Continue
                         with
                         Twitter</a>
                     <a class="btn_bordered login_social" onclick="signInPopup()">

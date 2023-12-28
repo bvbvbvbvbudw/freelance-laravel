@@ -11,19 +11,19 @@
             <div class="filter border_dashboard3">
                 <div class="filter_searchline">
                     <div class="filter_back">
-                        <img src="../img/svg/icons/left_arrow.svg" alt="">
+                        <img src="{{ asset('img/svg/icons/left_arrow.svg') }}" alt="">
                     </div>
                     <div class="filter_search">
                         <div>
                             <span class="filter_circle circle_red"></span>
                             <span>Hotels</span>
-                            <img src="../img/svg/icons/cancel_filled.svg" alt="">
+                            <img src="{{ asset('img/svg/icons/cancel_filled.svg') }}" alt="">
                         </div>
                         <input placeholder="Filter..." type="text">
                     </div>
                     <div class="filter_dialog">
-                        <div class="filter_tick"> <img src="../img/svg/icons/tick.svg" alt=""></div>
-                        <div class="filter_cancel"> <img src="../img/svg/icons/cancel.svg" alt=""></div>
+                        <div class="filter_tick"> <img src="{{ asset('img/svg/icons/tick.svg') }}" alt=""></div>
+                        <div class="filter_cancel"> <img src="{{ asset('img/svg/icons/cancel.svg') }}" alt=""></div>
                     </div>
                 </div>
                 <div class="filter_list_block">
@@ -55,19 +55,19 @@
             <div class="filter border_dashboard3">
                 <div class="filter_searchline">
                     <div class="filter_back">
-                        <img src="../img/svg/icons/left_arrow.svg" alt="">
+                        <img src="{{ asset('img/svg/icons/left_arrow.svg') }}" alt="">
                     </div>
                     <div class="filter_search">
                         <div>
                             <span class="filter_circle circle_red"></span>
                             <span>Facebook</span>
-                            <img src="../img/svg/icons/cancel_filled.svg" alt="">
+                            <img src="{{ asset('img/svg/icons/cancel_filled.svg') }}" alt="">
                         </div>
                         <input placeholder="Filter..." type="text">
                     </div>
                     <div class="filter_dialog">
-                        <div class="filter_tick"> <img src="../img/svg/icons/tick.svg" alt=""></div>
-                        <div class="filter_cancel"> <img src="../img/svg/icons/cancel.svg" alt=""></div>
+                        <div class="filter_tick"> <img src="{{ asset('img/svg/icons/tick.svg') }}" alt=""></div>
+                        <div class="filter_cancel"> <img src="{{ asset('img/svg/icons/cancel.svg') }}" alt=""></div>
                     </div>
                 </div>
                 <div class="filter_list_block">
@@ -105,19 +105,19 @@
             <div class="filter border_dashboard3">
                 <div class="filter_searchline">
                     <div class="filter_back">
-                        <img src="../img/svg/icons/left_arrow.svg" alt="">
+                        <img src="{{ asset('img/svg/icons/left_arrow.svg') }}" alt="">
                     </div>
                     <div class="filter_search">
                         <div>
                             <span class="filter_circle circle_red"></span>
                             <span>Germany</span>
-                            <img src="../img/svg/icons/cancel_filled.svg" alt="">
+                            <img src="{{ asset('img/svg/icons/cancel_filled.svg') }}" alt="">
                         </div>
                         <input placeholder="Filter..." type="text">
                     </div>
                     <div class="filter_dialog">
-                        <div class="filter_tick"> <img src="../img/svg/icons/tick.svg" alt=""></div>
-                        <div class="filter_cancel"> <img src="../img/svg/icons/cancel.svg" alt=""></div>
+                        <div class="filter_tick"> <img src="{{ asset('img/svg/icons/tick.svg') }}" alt=""></div>
+                        <div class="filter_cancel"> <img src="{{ asset('img/svg/icons/cancel.svg') }}" alt=""></div>
                     </div>
                 </div>
                 <div class="filter_list_block">
@@ -181,7 +181,7 @@
         </div>
 
         <div class="border_dashboard input_group border_dashboard3">
-            <span class="input_grop_text"><img class="_icon" src="../img/svg/icons/<?= $theme ?>/ic_search_48px.svg"></span>
+            <span class="input_grop_text"><img class="_icon" src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px.svg') }}" alt="icon"></span>
             <input class="input-transparent input_group_control" placeholder="Search contracts">
         </div>
     </div>

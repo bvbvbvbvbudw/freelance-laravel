@@ -3,7 +3,8 @@
 @section('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../freelance/resources/css/dropzone.css" type="text/css" />
+{{--    <link rel="stylesheet" href="../../freelance/resources/css/dropzone.css" type="text/css" />--}}
+    <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}" type="text/css" />
     <main class="dashboard_main">
         @include('dashboard.components.columns.left_column')
         <div class="content">

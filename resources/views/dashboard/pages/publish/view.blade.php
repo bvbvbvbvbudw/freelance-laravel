@@ -14,7 +14,7 @@ $theme_reverse = 'dark';
                     <div>
                         <a href="">
                             <div class="button button_1 button_with_icon"><img class="_icon"
-                                                                               src="../img/svg/icons/<?= $theme_reverse ?>/add_24px.svg"> Add view
+                                                                               src="{{ asset('img/svg/icons/' . $theme . '/add_24px.svg') }}" alt="icon"> Add view
                             </div>
                         </a>
                     </div>
@@ -25,14 +25,14 @@ $theme_reverse = 'dark';
                     </ul>
                     <div class=" dashboard_navsearch_block-actions">
                         <button class="button_noappearance"><img class=" _icon_medium"
-                                                                  src="../img/svg/icons/<?= $theme ?>/ic_search_48px.svg"></button>
+                                                                  src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px.svg') }}" alt="icon"></button>
                     </div>
                 </div>
 
             </div>
 
             <div class="dashboard_supporters_block border_dashboard dashboard_block dashboard_info_block bg_secondary">
-                <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+                <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}" alt="icon">
                 <h2 class="h2">Publish your first view</h2>
                 <p>Share your work, inspirations, or behind-the-scenes images with everyone or keep it exclusive for your members.
                     Creators who update their gallery regularly tend to earn more support.</p>

@@ -11,20 +11,20 @@
                             <div class="jobs_statistics row-3 statistics">
                                 <div class="border_dashboard br-10">
                                     <h2 class="h1">0</h2>
-                                    <p class="s-18 mt-16"><img class="_icon_medium"
-                                                               src="../img/svg/icons/<?= $theme ?>/icon _favorite_.svg"> 0
+                                    <p class="s-18 mt-16">
+                                        <img class="_icon_medium" src='{{ asset('img/svg/icons/' . $theme . '/icon _favorite_.svg') }}' alt="icon"> 0
                                         supporter</p>
                                 </div>
                                 <div class="border_dashboard br-10">
                                     <h2 class="h1">$0</h2>
-                                    <p class="s-18 mt-16"><img class="_icon_medium"
-                                                               src="../img/svg/icons/<?= $theme ?>/ic_date_range_48px.svg">
+                                    <p class="s-18 mt-16">
+                                        <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_date_range_48px.svg') }}" alt="icon">
                                         Last 30 Days</p>
                                 </div>
                                 <div class="border_dashboard br-10">
                                     <h2 class="h1">$0</h2>
-                                    <p class="s-18 mt-16"><img class="_icon_medium"
-                                                               src="../img/svg/icons/<?= $theme ?>/icon _attach money_.svg">
+                                    <p class="s-18 mt-16">
+                                        <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/icon _attach money_.svg') }}" alt="icon">
                                         All time</p>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 <div class="s-14 medium">Select date</div>
                                 <div>
                                     <h2 class="s-32 calendar_date_preview">Mon, Sep 25</h2>
-                                    <img class="_icon" src="../img/svg/icons/<?= $theme ?>/mode_edit_24px.svg">
+                                    <img class="_icon" src="{{ asset('img/svg/icons/' . $theme . '/mode_edit_24px.svg') }}" alt="icon">
                                 </div>
                             </div>
                             <div class="date-picker-table"></div>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="border_dashboard3 input_group">
             <span class="input_grop_text"><img class="_icon"
-                                               src="../img/svg/icons/<?= $theme ?>/ic_search_48px3.svg"></span>
+                                               src="{{ asset('img/svg/icons/' . $theme . '/ic_search_48px3.svg') }}" alt="icon"></span>
                             <input class="input-transparent input_group_control" placeholder="Search contracts">
                         </div>
                     </div>
@@ -141,6 +141,6 @@
             createCalendar('#jobs_calendar');
         });
     </script>
-    <script src="../js/date-picker.js"></script>
+    <script src="{{ asset('js/date-picker.js') }}"></script>
     @include('brand.components.footer')
 @endsection

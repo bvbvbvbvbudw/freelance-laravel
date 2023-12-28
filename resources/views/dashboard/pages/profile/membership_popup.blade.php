@@ -5,10 +5,10 @@ $theme_reverse = $theme == 'light' ? 'dark' : 'light';
 <div class="popup-container">
     <div class="popup popup_light member_popup_block">
         <div class="popup_close" onclick="closePopup()"><img class="_icon"
-                                                             src="../img/svg/icons/<?= $theme ?>/ic_close_48px.svg" alt="">
+                                                             src="{{ asset('img/svg/icons/' . $theme . '/ic_close_48px.svg') }}" alt="icon">
         </div>
         <form class="member_popup ">
-            <div><img src="../img/png/avatar.png" alt=""></div>
+            <div><img src="{{ asset('img/png/avatar.png') }}" alt="avatar"></div>
             <p class="s-20 bold">Become a member</p>
             <div class="member_popup_plan">
                 <div class="active">$7 per month</div>

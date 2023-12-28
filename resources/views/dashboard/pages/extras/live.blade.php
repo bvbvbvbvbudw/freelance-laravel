@@ -31,7 +31,7 @@
                     <p class="s-18">We recommend an image should be square, at least 1080x1080px, and JPG, PNG or GIF format.</p>
                     <div class="extra_dropdown">
             <span class="extra_dropdow_text"><img class="_icon-big"
-                                                  src="../../img/svg/icons/<?= $theme ?>/file_upload.svg">Upload</span>
+                                                  src="{{ asset('img/svg/icons/' . $theme . '/file_upload.svg') }}" alt="icon">Upload</span>
                     </div>
                 </div>
                 <div class="membership_form_block">
@@ -106,7 +106,7 @@
             </div>
             <div class="border_dashboard3  extra_form_submit content-col2-aside-lg br-10 bg_secondary">
                 <h4 class="s-20 medium">Prefiew Extra</h4>
-                <img class="mt-20" src="../../img/png/extra_preview.png" alt="">
+                <img class="mt-20" src="{{ asset('img/png/extra_preview.png') }}" alt="icon">
                 <p class="s-20-s mt-20">Group Yoga on June 1st</p>
                 <div class="mt-20 flex flex-between">
                     <p class="s-25 semibold">$20</p>

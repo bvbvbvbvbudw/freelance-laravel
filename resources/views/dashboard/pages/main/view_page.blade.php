@@ -24,10 +24,10 @@ if($user && $req_user) {
                 <div class="profile_border1 br-20 p-24-24 my_support_block">
                     <div class="my_support_nav">
                         <div data-num="1" class="s-18"><img class="_icon_medium"
-                                                            src="../img/svg/icons/<?= $theme ?>/ic_pan_tool_48px.svg" alt="">
+                                                            src="{{ asset('img/svg/icons/' . $theme . '/ic_pan_tool_48px.svg') }}" alt="icon">
                             Invite</div>
                         <div data-num="2" class="active s-18"><img class="_icon_medium"
-                                                                   src="../img/svg/icons/<?= $theme ?>/ic_favorite_border_48px2.svg" alt=""> Support</div>
+                                                                   src="{{ asset('img/svg/icons/' . $theme . '/ic_favorite_border_48px2.svg') }}" alt="icon"> Support</div>
                     </div>
                     <div class="my_support_content">
                         <h3 class="s-20 bold text-center">Send <span class="s-20 bold">Alex Jeleazco</span> support</h3>
@@ -61,13 +61,13 @@ if($user && $req_user) {
                     </div>
                     <form class="my_invite_content" style="display:none">
                         <div>
-                            <img src="../img/png/avatar.png" alt="">
+                            <img src=".{{ asset('img/png/avatar2.png') }}" alt="icon">
                         </div>
                         <div>
                             <p class="s-18 bold">Take part in {{isset($is_current_user) ? $is_current_user->name : "" }}<br> view!</p>
                         </div>
-                        <div><a href="../dashboard/brands.php" class="blue_btn">Invite for job</a></div>
-                        <div><a href="../profile/login.php " class="white_btn">Log in</a></div>
+                        <div><a href="{{ route('brandDashboard') }}" class="blue_btn">Invite for job</a></div>
+                        <div><a href="{{ route('login') }}" class="white_btn">Log in</a></div>
                         <div><a onclick="applyBrandPopup()" class="white_btn">Apply as brand</a></div>
                     </form>
 
@@ -92,7 +92,7 @@ if($user && $req_user) {
                 <div class="recent_supporter profile_border2 br-20">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/Color logo - no background.png" alt="">
+                            <img src="{{ asset('img/png/Color logo - no background.png') }}" alt="bg">
                         </div>
                         <div>
                             <div class="supporter_message_info">
@@ -109,7 +109,7 @@ if($user && $req_user) {
                 <div class="recent_supporter profile_border2 br-20">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/Color logo - no background.png" alt="">
+                            <img src="{{ asset('img/png/Color logo - no background.png') }}" alt="bg">
                         </div>
                         <div>
                             <div class="supporter_message_info">
@@ -126,7 +126,7 @@ if($user && $req_user) {
                 <div class="recent_supporter profile_border2 br-20">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/Color logo - no background.png" alt="">
+                            <img src="{{ asset('img/png/Color logo - no background.png') }}" alt="bg">
                         </div>
                         <div>
                             <div class="supporter_message_info">
@@ -145,7 +145,7 @@ if($user && $req_user) {
                     <hr class="profile_hr">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/avatar3.png" alt="">
+                            <img src="{{ asset('img/png/avatar3.png') }}" alt="avatar">
                         </div>
                         <div>
                             <div class="supporter_message_info">
@@ -164,7 +164,7 @@ if($user && $req_user) {
                 <div class="recent_supporter profile_border2 br-20">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/Color logo - no background.png" alt="">
+                            <img src="{{ asset('img/png/Color logo - no background.png') }}" alt="bg">
                         </div>
                         <div>
                             <div class="supporter_message_info">
@@ -185,7 +185,7 @@ if($user && $req_user) {
                     <hr class="profile_hr">
                     <div class="supporter_message_block">
                         <div class="supporter_image">
-                            <img src="../img/png/avatar3.png" alt="">
+                            <img src="{{ asset('img/png/avatar3.png') }}" alt="avatar">
                         </div>
                         <div>
                             <div class="supporter_message_info">

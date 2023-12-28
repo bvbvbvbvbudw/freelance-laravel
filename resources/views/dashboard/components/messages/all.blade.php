@@ -1,5 +1,5 @@
 <div class="dashboard_supporters_block border_dashboard dashboard_block dashboard_info_block bg_four">
-    <img class="_icon-big" src="../img/svg/icons/<?= $theme ?>/icon _favorite_2.svg">
+    <img class="_icon-big" src="{{ asset('img/svg/icons/' . $theme . '/icon _favorite_2.svg') }}" alt="icon">
     <h2 class="h2">No messages so far</h2>
     <p>Send a private message or broadcast one to all your supporters or members.</p>
     <div class="flex flex-center">

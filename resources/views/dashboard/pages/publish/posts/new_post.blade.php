@@ -13,14 +13,14 @@
                         </div>
                         <div class="newpost_actions">
                             <a href="{{ route('viewPostsPage') }}" class="button button_2">
-                                <img class="_icon" src="/app/img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_left_48px2.svg">
+                                <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_left_48px2.svg') }}" alt="icon">
                                 Dashboard
                             </a>
                             <div class="button_with_dropdown  mt-16">
                                 <button class="dropbtn light_border" type="submit"> Publish now</button>
                                 <div class="dropdown">
                                     <div class="dropbtn arrow_dropbtn light_border">
-                                        <img class="_icon-big" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                                        <img class="_icon-big" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                                     </div>
                                     <div class="dropdown-content-block dropdown-left">
                                         <div class="dropdown-content sharepage_dropdown ">
@@ -49,9 +49,8 @@
                                 <p>Who can see this post?</p>
                                 <div class="dropdown mt-16">
                                     <div class="dropbtn dropdown_select">
-                                        <img class="_icon" src="../img/svg/icons/light/ic_language_48px.svg">
-                                        Public
-                                        <img class="_icon" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                                        <img class="_icon" src="{{ asset('img/svg/icons/light/ic_language_48px.svg') }}" alt="icon">Public
+                                        <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                                     </div>
                                     <div class="dropdown-content-block dropdown-content-close dropdown-left">
                                         <div class="dropdown-content sharepage_dropdown">
