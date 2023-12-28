@@ -54,7 +54,7 @@ if($user && $req_user) {
                             <form id="supportForm" method="post" action="{{route('paymentPopup')}}">
                                 @csrf
                                 <input type="hidden" name="donate" id="donate" value="5">
-                                <input type="hidden" name="id" id="id" value="{{$req_user->id}}">
+                                <input type="hidden" name="id" id="id" value="{{isset($req_user->id) ? $req_user->id : null}}">
                                 <button onclick="paymentPopup1(event)" id="support_button" class="w_full blue_btn">Support $5</button>
                             </form>
                         </div>
@@ -64,7 +64,7 @@ if($user && $req_user) {
                             <img src=".{{ asset('img/png/avatar2.png') }}" alt="icon">
                         </div>
                         <div>
-                            <p class="s-18 bold">Take part in {{isset($is_current_user) ? $is_current_user->name : "" }}<br> view!</p>
+                            <p class="s-18 bold">Take part in {{isset($is_current_user -> name) ? $is_current_user->name : "" }}<br> view!</p>
                         </div>
                         <div><a href="{{ route('brandDashboard') }}" class="blue_btn">Invite for job</a></div>
                         <div><a href="{{ route('login') }}" class="white_btn">Log in</a></div>

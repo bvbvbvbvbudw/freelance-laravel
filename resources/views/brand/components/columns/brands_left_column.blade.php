@@ -25,6 +25,9 @@
         </ul>
         <div class="nav_category-name">Settings</div>
         <ul class="nav_category-list">
+            <li><a href="{{ route('brandButtons') }}"><img
+                        src="{{ asset('img/svg/icons/' . $theme . '/icon _analytics_.svg') }}" alt="icon">Buttons &
+                    Graphics</a></li>
             <li><a href="{{ route('brandIntegrations') }}"><img
                         src="{{ asset('img/svg/icons/' . $theme . '/icon _list alt_.svg') }}">Integrations</a></li>
             <li><a href="{{ route('brandPayouts') }}"><img

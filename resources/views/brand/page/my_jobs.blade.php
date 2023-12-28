@@ -17,7 +17,8 @@
                 <?php for ($i = 0; $i < 3; $i++) { ?>
                 <div class="mypost p-24-16 border_dashboard3 br-10">
                     <div class="mypost_header flex flex-between">
-                        <h2 class="s-20-s">Creating viral reels for Instagram</h2>
+                        <h2 class="s-20-s">Creating viral reels for Instagram
+                        </h2>
                         <div>
                             <a>
                                 <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_pan_tool_48px2.svg') }}" alt="icon">
@@ -53,6 +54,7 @@
                     </div>
                     <div class="mypost_actions mt-16">
                         <a href="#" class="button button_1 button-br_md main_color_important">Apply Now</a>
+                        <a href="{{ route('brandJobDetails') }}">Details</a>
                     </div>
                 </div>
                 <?php } ?>

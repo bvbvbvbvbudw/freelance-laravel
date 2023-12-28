@@ -3,7 +3,7 @@
     <form id="signinForm"
           action="{{route('login')}}" method="POST"
           class="signin_popup">
-        @csrf
+
       <h2 class="s-20 medium">Sign in</h2>
       <div class="login_field_block">
         <label for="email">Mobile phone number or email</label>
@@ -28,6 +28,7 @@
             Notice</a> </p>
       </div>
       <div> <a onclick="createAccountPopup()" class="white_btn">Create account</a></div>
+        @csrf
     </form>
   </div>
 </div>

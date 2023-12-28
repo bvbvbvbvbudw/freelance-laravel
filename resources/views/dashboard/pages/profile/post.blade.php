@@ -25,7 +25,7 @@
                         <a href=""><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_favorite_border_48px4.svg') }}"
                                         alt=""></a>
 
-                            <a href=""><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_message_48px4 4.svg') }}" alt="icon"></a>
+                            <a href=""><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_message_48px4.svg') }}" alt="icon"></a>
                         <a href=""><img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/file_upload 4.svg') }}" alt="icon"></a>
                     </div>
                 </div>

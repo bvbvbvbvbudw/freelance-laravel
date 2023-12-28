@@ -64,7 +64,7 @@ function createAccountPopup() {
     openPopup('singin-popups')
 }
 function addViewPopup() {
-    openPopup('add_view_popup.php')
+    openPopup('add_view')
 }
 function authorizePopup() {
     openPopup('social_authorize_popup.php')

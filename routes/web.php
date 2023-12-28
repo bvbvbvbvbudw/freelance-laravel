@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -69,6 +69,9 @@ Route::prefix('popups')->group(function(){
     Route::get('/brand_popup', function(){
         return view('dashboard.components.popups.brand_popup');
     });
+    Route::get('/add_view', function(){
+        return view('dashboard.components.popups.add_view_popup');
+    });
 });
 
 Route::middleware(['auth'])->group(function (){
@@ -80,6 +83,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('/membership', [PagesController::class, 'showMembershipPage'])->name('viewMembershipPage');
             Route::get('/membership/enable', [PagesController::class, 'showEnableMembershipPage'])->name('viewEnableMembership');
             Route::get('/extras', [PagesController::class, 'showExtrasPage'])->name('viewExtrasPage');
+            Route::get('/feed', [PagesController::class, 'showFeedPage'])->name('viewFeedPage');
             Route::get('/commissions', [PagesController::class, 'showCommissionsPage'])->name('viewCommissionsPage');
             Route::get('/messages', [PagesController::class, 'showMessagesPage'])->name('viewMessagePage');
             Route::resource('/jobs', JobsController::class)->names('viewJobsPage');
@@ -88,7 +92,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('/payouts', [PagesController::class, 'showPayoutsPage'])->name('viewPayoutsPage');
             Route::get('/settings', [PagesController::class, 'showSettingsPage'])->name('viewSettingsPage');
             Route::get('/view', [PagesController::class, 'showViewPublishPage'])->name('viewPublishPage');
-            Route::get('/buttons', [PagesController::class, 'showButtonsPage'])->name('viewButtonsPage');
+            Route::get('/b&g', [PagesController::class, 'showButtonsPage'])->name('viewButtonsPage');
             Route::get('/post', [PagesController::class, 'showPostsPage'])->name('viewPostsPage');
             Route::get('/post/new', [PagesController::class, 'showPostsCreatePage'])->name('viewPostsCreatePage');
             Route::get('/post/audio/new', [PagesController::class, 'showPostsAudioCreatePage'])->name('viewPostsAudioCreatePage');
