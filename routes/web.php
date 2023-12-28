@@ -72,12 +72,22 @@ Route::prefix('popups')->group(function(){
     Route::get('/add_view', function(){
         return view('dashboard.components.popups.add_view_popup');
     });
+    Route::get('/offer_job', function(){
+        return view('dashboard.components.popups.offer_popup');
+    });
 });
+
+
 
 Route::middleware(['auth'])->group(function (){
 
-    Route::middleware(['role:1'])->group(function () {
-        Route::prefix('app')->group(function () {
+    Route::prefix('app')->group(function () {
+
+        Route::get('/redirect', function(){
+            return redirect()->route('viewProfilePage', auth()->user()->name);
+        });
+
+        Route::middleware(['role:1'])->group(function () {
             Route::get('/dashboard', [PagesController::class, 'showHomePage'])->name('mainPage');
             Route::get('/donations', [PagesController::class, 'showDonationPage'])->name('viewDonate');
             Route::get('/membership', [PagesController::class, 'showMembershipPage'])->name('viewMembershipPage');
@@ -97,29 +107,27 @@ Route::middleware(['auth'])->group(function (){
             Route::get('/post/new', [PagesController::class, 'showPostsCreatePage'])->name('viewPostsCreatePage');
             Route::get('/post/audio/new', [PagesController::class, 'showPostsAudioCreatePage'])->name('viewPostsAudioCreatePage');
             Route::get('/post/album/new', [PagesController::class, 'showPostsAlbumCreatePage'])->name('viewPostsAlbumCreatePage');
-
         });
-
+        Route::middleware(['role:2'])->group(function () {
+            Route::prefix('brand')->group(function() {
+                Route::get('/dashboard', [BrandPagesController::class, 'dashboardPage'])->name('brandDashboard');
+                Route::get('/campaigns', [BrandPagesController::class ,'campaignsPage'])->name('brandCampaigns');
+                Route::get('/contract-statistics', [BrandPagesController::class, 'campaignsContractPage'])->name('brandContractStatistic');
+                Route::get('/job/new', [BrandPagesController::class, 'newJobPage'])->name('brandJob');
+                Route::get('/my-jobs', [BrandPagesController::class, 'myJobsPage'])->name('brandMyJob');
+                Route::get('/jobs', [BrandPagesController::class, 'jobDetailsPage'])->name('brandJobDetails');
+                Route::get('/explore', [BrandPagesController::class, 'explorePage'])->name('brandExplore');
+                Route::get('/messages', [BrandPagesController::class, 'messagesPage'])->name('brandMessage');
+                Route::get('/commissions', [BrandPagesController::class, 'commissionsPage'])->name('brandCommissions');
+                Route::get('/b&g', [BrandPagesController::class, 'buttonsPage'])->name('brandButtons');
+                Route::get('/integrations', [BrandPagesController::class, 'integrationsPage'])->name('brandIntegrations');
+                Route::get('/payouts', [BrandPagesController::class, 'payoutsPage'])->name('brandPayouts');
+                Route::get('/settings', [BrandPagesController::class, 'settingsPage'])->name('brandSettings');
+            });
+        });
     });
 
-    Route::middleware(['role:2'])->group(function () {
-        Route::prefix('brand')->group(function() {
-            Route::get('/dashboard', [BrandPagesController::class, 'dashboardPage'])->name('brandDashboard');
-            Route::get('/campaigns', [BrandPagesController::class ,'campaignsPage'])->name('brandCampaigns');
-            Route::get('/contract-statistics', [BrandPagesController::class, 'campaignsContractPage'])->name('brandContractStatistic');
-            Route::get('/job/new', [BrandPagesController::class, 'newJobPage'])->name('brandJob');
-            Route::get('/jobs', [BrandPagesController::class, 'myJobsPage'])->name('brandMyJob');
-            Route::get('/my-jobs', [BrandPagesController::class, 'jobDetailsPage'])->name('brandJobDetails');
-            Route::get('/explore', [BrandPagesController::class, 'explorePage'])->name('brandExplore');
-            Route::get('/messages', [BrandPagesController::class, 'messagesPage'])->name('brandMessage');
-            Route::get('/commissions', [BrandPagesController::class, 'commissionsPage'])->name('brandCommissions');
-            Route::get('/b&g', [BrandPagesController::class, 'buttonsPage'])->name('brandButtons');
-            Route::get('/integrations', [BrandPagesController::class, 'integrationsPage'])->name('brandIntegrations');
-            Route::get('/payouts', [BrandPagesController::class, 'payoutsPage'])->name('brandPayouts');
-            Route::get('/settings', [BrandPagesController::class, 'settingsPage'])->name('brandSettings');
-        });
 
-    });
 
     Route::post('/post/store', [PagesController::class, 'storePost'])->name('post_create');
     Route::post('/edit-profile/store', [ProfileController::class, 'editProfile'])->name('editProfile');

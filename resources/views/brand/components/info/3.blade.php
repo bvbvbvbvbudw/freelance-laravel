@@ -2,7 +2,7 @@
     <div class="dashboard_user_block-profile">
         <div class="dashboard_user_block-profile-info">
             <div>
-                <img src="../img/png/avatar.png" alt="avatar">
+                <img src="{{ asset('img/png/avatar.png')  }}" alt="avatar">
             </div>
             <div>
                 <h2 class="h2">EvaCosmeticsBrand!</h2>
@@ -12,7 +12,7 @@
         <div class="dashboard_user_block-profile-share">
             <div class="sharepage_button-block dropdown">
                 <div class="sharepage_button dropbtn light_border">
-                    <img class="_icon" src="../img/svg/icons/light/Share Rounded.svg">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/Share Rounded.svg') }}" alt="icon">
                     Share page
                 </div>
                 <div class="dropdown-content-block dropdown-left">
@@ -53,7 +53,7 @@
             <h2 class="h2">Earnings</h2>
             <div class=" dropdown">
                 <div class="dropbtn light_border">
-                    <img class="_icon" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                     Last 30 days
                 </div>
                 <div class="dropdown-content-block drodown-right">
@@ -74,7 +74,7 @@
             </div>
             <div class="dropdown">
                 <div class="dropbtn light_border">
-                    <img class="_icon" src="../img/svg/icons/light/ic_keyboard_arrow_down_48px.svg">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
                     By platform
                 </div>
                 <div class="dropdown-content-block dropdown-left">
@@ -84,7 +84,7 @@
                                 <a href="#">Youtube</a>
                             </li>
                             <li>
-                                <a href="#">Tictok</a>
+                                <a href="#">Tiktok</a>
                             </li>
                             <li>
                                 <a href="#">Instagram</a>
@@ -101,7 +101,7 @@
                 <div class="statistic_val">2,345</div>
                 <div class="statisctic_increase">
                     <span>+345 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -109,7 +109,7 @@
                 <div class="statistic_val">350,090</div>
                 <div class="statisctic_increase">
                     <span>+1,900 (+ 5 %)</span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -117,7 +117,7 @@
                 <div class="statistic_val">2,345</div>
                 <div class="statisctic_increase">
                     <span>+345 </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -125,7 +125,7 @@
                 <div class="statistic_val">2,345</div>
                 <div class="statisctic_increase">
                     <span>+345 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -133,7 +133,7 @@
                 <div class="statistic_val">550</div>
                 <div class="statisctic_increase">
                     <span>+50 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -141,14 +141,14 @@
                 <div class="statistic_val">1550</div>
                 <div class="statisctic_increase">
                     <span>+150 (+ 10 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
         </div>
 
         <div class="flex align-center gap-32 mt-40">
             <h2 class="h2">Social statistic</h2>
-            <img class="_icon_medium" src="../img/svg/icons/<?= $theme ?>/ic_keyboard_arrow_down_48px.svg" alt="">
+            <img class="_icon_medium" src="{{ asset('img/svg/icons/' . $theme . '/ic_keyboard_arrow_down_48px.svg') }}" alt="icon">
         </div>
 
         <div class="earnings_row  mt-40">
@@ -158,7 +158,7 @@
                 <div class="statistic_val">2,345</div>
                 <div class="statisctic_increase">
                     <span>+345 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -167,7 +167,7 @@
                 <div class="statistic_val">350,090</div>
                 <div class="statisctic_increase">
                     <span>+1,900 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -176,7 +176,7 @@
                 <div class="statistic_val">2,345</div>
                 <div class="statisctic_increase">
                     <span>+345 (+ 5 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
             <div class="earnings_col">
@@ -185,7 +185,7 @@
                 <div class="statistic_val">1,223405</div>
                 <div class="statisctic_increase">
                     <span>+12345 (+ 155 %) </span>
-                    <img src="../img/svg/icons/light/ic_arrow_upward_48px2.svg" alt="">
+                    <img class="_icon" src="{{ asset('img/svg/icons/light/ic_arrow_upward_48px2.svg') }}" alt="icon">
                 </div>
             </div>
         </div>

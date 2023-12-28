@@ -16,14 +16,7 @@ $('.left_panel_close_button').on('click', function () {
 
 
 function offerPopup() {
-    $.ajax({
-        url: "/app/dashboard/offer_popup.php",
-        type: 'GET',
-        success: function (data) {
-            $('body').append(data);
-
-        }
-    });
+    openPopup('offer_job')
 }
 
 function closePopup() {

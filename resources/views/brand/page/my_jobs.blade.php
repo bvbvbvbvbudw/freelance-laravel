@@ -54,7 +54,7 @@
                     </div>
                     <div class="mypost_actions mt-16">
                         <a href="#" class="button button_1 button-br_md main_color_important">Apply Now</a>
-                        <a href="{{ route('brandJobDetails') }}">Details</a>
+{{--                        <a href="{{ route('brandJobDetails') }}">Details</a>--}}
                     </div>
                 </div>
                 <?php } ?>
